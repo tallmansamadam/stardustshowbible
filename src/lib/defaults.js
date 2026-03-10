@@ -75,11 +75,12 @@ Warm · Theatrical · A little cheeky · Never corporate · Never cringe
 - Carousel stills should be on-brand: event photography, atmosphere shots, upcoming event graphics
 
 **Carousel image specs**
-- Export all images at **1920×1080px (16:9 landscape)**
+- All carousel screens are **vertically oriented (portrait)** — export images at **1080×1920px (9:16)**
 - Keep all important content (text, faces, logos) within the center **80% safe zone** — TVs vary in overscan and edge cropping
 - Consistent aspect ratio across the entire carousel — mixed ratios will stretch or letterbox and look amateurish
-- [ ] Audit and resize existing carousel folder to 1920×1080
-- [ ] Re-export any portrait or square images as landscape crops before next night
+- Shoot or crop source photos in portrait orientation before building carousel assets
+- [ ] Audit and resize existing carousel folder to 1080×1920
+- [ ] Re-export any landscape or square images as portrait crops before next night
 - [ ] Confirm screen numbering and input routing before first night
 
 **Karafun display**
