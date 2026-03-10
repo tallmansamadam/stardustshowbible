@@ -88,7 +88,7 @@ Warm · Theatrical · A little cheeky · Never corporate · Never cringe
 - Use this to set a branded idle screen (Stardust logo or branded background) rather than the Karafun default splash
 - **The Karafun display is vertically oriented (portrait)** — background/idle image should be **1080×1920px**, not landscape
 - Dark background with the logo centered — consistent with the venue's visual identity
-- [ ] Design and upload a branded Karafun idle/background screen at 1080×1920px
+- [ ] See if Karafun supports a custom branded idle/background screen — design one at 1080×1920px and test upload
 - [ ] Confirm Karafun display output is routed to odd-numbered screens only
 
 ### Every Karaoke Night
