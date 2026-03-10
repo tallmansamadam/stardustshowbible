@@ -235,6 +235,148 @@ Use a mix of tiers on every post. Don't use all of them — pick 10–15 that fi
 **Content-type tags (use situationally)**
 #behindthescenes #staffpick #weekendplans #thingstodoinchicago #chicagoweekend #barlife
 
+### Platform Tips & Post Templates
+
+---
+
+## Instagram
+
+**Tips**
+- Instagram truncates captions after ~125 characters before the "more" tap — the first line is the only line most people read. Lead with the hook, not the context.
+- Reels currently get 3–5x the reach of static posts. Prioritize one Reel per week minimum.
+- 8–15 hashtags outperform 30 — the algorithm has deprioritized hashtag stuffing. Use the ones that actually match the content.
+- Respond to comments within the first hour. It signals to the algorithm that the post has engagement momentum.
+- Stories: use interactive stickers (polls, countdowns, "this or that") — they get higher completion rates and push you up in the feed.
+- Best posting times: Tuesday–Thursday 11am–1pm. For weekend events, post Friday morning.
+
+**Templates**
+
+*Event announcement (Reel cover caption):*
+Friday. The booth. Your song. Doors at 8.
+📍 710 N Clark · River North
+[hashtags]
+
+*Night recap:*
+Last night someone sang [SONG] and the room lost it.
+That's Stardust. See you this [FRIDAY/SATURDAY].
+[hashtags]
+
+*Performer spotlight:*
+This person walked in nervous and walked out a legend.
+Every Friday. Every Saturday. 710 N Clark.
+[hashtags]
+
+*Disco/Funk theme push:*
+Disco Karaoke is [FRIDAY/SATURDAY] night.
+Bring your best Donna Summer. Or your best Bee Gees. We don't judge.
+We just dance.
+📍 710 N Clark · River North · Doors 8pm
+[hashtags]
+
+*Electro Swing tease (pre-launch):*
+Something's swinging this way.
+More soon. 👀
+[hashtags]
+
+---
+
+## TikTok
+
+**Tips**
+- The first 1–3 seconds decide everything. Open mid-action, mid-lyric, or with a bold on-screen text hook — never a slow pan of an empty room.
+- Captions barely matter. The algorithm is sound + visual. Write them, but don't agonize over them.
+- Trending sounds boost reach when used naturally. Don't force it. If the sound fits a karaoke or disco moment, use it. If it doesn't, don't.
+- 60–150 second videos tend to outperform 15-second clips for this type of content — enough time to build a moment.
+- Post 3–5x per week to feed the algorithm. Consistency matters more than perfection.
+- Reply to comments with video responses — TikTok surfaces these and they extend a post's life.
+- Raw and authentic outperforms polished here. A shaky phone video of a crowd going wild beats a produced promo every time.
+
+**Templates**
+
+*Karaoke clip (on-screen text overlay):*
+Line 1: "this person just [sang X / did this / killed it]"
+Line 2: "stardust chicago every friday"
+No caption needed beyond location tag.
+
+*Disco education post:*
+[Clip of disco/funk moment]
+Caption: "yes we do disco karaoke. yes it goes OFF. 710 n clark, river north, chicago"
+
+*Artist/genre introduction (for Electro Swing):*
+"you've probably never heard of electro swing"
+[audio: Caravan Palace or Parov Stelar]
+"we're changing that. launching [DATE] at stardust chicago"
+
+*Behind the scenes:*
+[Quick cuts: mics being set up, QR cards on tables, lights coming on]
+Caption: "getting stardust ready for tonight"
+
+---
+
+## Facebook
+
+**Tips**
+- **Events are your most powerful tool.** Every karaoke night, every DJ night, every themed event should be a Facebook Event. It surfaces in local discovery and sends reminders to RSVPs automatically.
+- Share events to relevant Chicago groups: River North neighborhood groups, Chicago nightlife/bar groups, disco/funk fan groups. Don't spam — add a genuine one-line note when sharing.
+- Longer copy works on Facebook in a way it doesn't on Instagram. Tell a story. Give context. The audience here is slightly older and will read.
+- Photo albums (multiple images in one post) outperform single images — they create a swipeable gallery that gets more time-on-post.
+- Native video gets reach; linked YouTube videos get almost none.
+- Go live occasionally during a hot moment — Facebook still boosts live video significantly.
+
+**Templates**
+
+*Weekly event post:*
+Karaoke + DJ Night — This [Friday/Saturday] at Stardust Chicago
+
+Doors open at 8pm. Grab the mic or grab a drink — either way, you're going to have a night.
+
+710 N Clark St · River North · Open till [4am/5am]
+RSVP → [link]
+
+*Disco theme announcement:*
+We're making karaoke weird. In the best way.
+
+This [Friday/Saturday] is Disco & Funk Night at Stardust. Donna Summer. Earth Wind & Fire. The Bee Gees. Pick your banger, grab the mic, and do not hold back.
+
+710 N Clark · Doors 8pm · Free to sing
+
+*Electro Swing launch:*
+Something new is coming to River North.
+
+On [DATE], Stardust Chicago launches its first Electro Swing Sunday — live DJ, free entry, and the sound of Caravan Palace and Parov Stelar filling the room.
+
+If you don't know electro swing yet, you're about to. See you Sunday.
+RSVP → [link]
+
+---
+
+## Twitter / X
+
+**Tips**
+- X is real-time. Its best use for Stardust is live commentary during the night — not just announcements.
+- One idea per tweet. If you need more than one sentence, consider whether it needs to be a thread or whether it's actually two tweets.
+- Punch up the language. X rewards wit over warmth. Be sharper here than on Instagram.
+- Threads work well for storytelling: what is electro swing, why we're doing it, why River North needs it.
+- Engage with Chicago nightlife accounts, local journalists, and food/drink writers. Reply, don't just broadcast.
+- Tweet during peak moments Friday and Saturday night — live tweeting a great karaoke performance can catch momentum.
+
+**Templates**
+
+*Night-of announcement:*
+Stardust is open tonight. 710 N Clark. Karaoke. DJ. Open till 4am. Come sing something embarrassing.
+
+*Real-time moment:*
+someone just sang [SONG] at stardust and the entire bar is involved now
+
+*Disco push:*
+disco karaoke is a real thing we do now. 710 n clark. river north. friday.
+
+*Electro Swing tease:*
+river north is about to find out what electro swing is. more soon.
+
+*Post-event:*
+last night was one of those. see you friday.
+
 ### KPIs to Track
 - Karaoke nights: headcount, repeat visitors
 - DJ nights: door count
