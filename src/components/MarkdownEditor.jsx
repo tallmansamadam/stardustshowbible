@@ -75,7 +75,7 @@ export default function MarkdownEditor({ title, value, canEdit, onSave, saving }
           </div>
         </div>
       ) : (
-        <div style={{ background: colors.surface, border: `1px solid ${colors.border}`, borderRadius: 10, padding: '20px 24px' }}>
+        <div className="card" style={{ background: colors.surface, border: `1px solid ${colors.border}`, borderRadius: 10, padding: '20px 24px' }}>
           {rendered}
         </div>
       )}

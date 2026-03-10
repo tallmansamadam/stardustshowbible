@@ -19,11 +19,14 @@ export default function LoginPage() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0d0b14' }}>
       <Stars />
-      <div style={{ position: 'relative', zIndex: 1, width: 340, background: '#1a1628', border: '1px solid #3a3050', borderRadius: 14, padding: '40px 36px' }}>
+      <div style={{ position: 'relative', zIndex: 1, width: 340, background: '#1a1628', border: '1px solid #3a3050', borderRadius: 16, padding: '44px 40px', boxShadow: '0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(155,143,212,0.06)' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <div style={{ fontSize: 10, letterSpacing: 6, color: '#d4a84a', textTransform: 'uppercase', marginBottom: 8 }}>Chicago</div>
-          <h1 style={{ margin: 0, fontSize: 36, fontWeight: 'normal', color: '#f0e8d0', fontFamily: 'Cormorant Garamond, Georgia, serif', letterSpacing: 2 }}>✦ Stardust</h1>
-          <div style={{ fontSize: 11, letterSpacing: 4, color: '#9b8fd4', textTransform: 'uppercase', marginTop: 4 }}>Club Organizer</div>
+          <img
+            src="https://stardustchi.com/wp-content/uploads/2025/04/Stardust-Logo-Blue-1024x332.png"
+            alt="Stardust Chicago"
+            style={{ width: 200, marginBottom: 10 }}
+          />
+          <div style={{ fontSize: 11, letterSpacing: 4, color: '#9b8fd4', textTransform: 'uppercase' }}>Club Organizer</div>
         </div>
 
         <div style={{ marginBottom: 14 }}>

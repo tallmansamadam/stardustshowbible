@@ -133,12 +133,13 @@ export default function App() {
     <div style={{ minHeight: '100vh', background: colors.bg, fontFamily: fonts.body, color: colors.text, position: 'relative', overflow: 'hidden' }}>
       <Stars />
       <style>{`
-        * { box-sizing: border-box; }
-        @keyframes twinkle { from { opacity: 0.15; } to { opacity: 0.7; } }
-        @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-        ::-webkit-scrollbar { width: 6px; }
+        @keyframes twinkle { from { opacity: 0.12; } to { opacity: 0.65; } }
+        @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        @keyframes flash { 0%,100% { opacity: 0; transform: translateY(-4px); } 10%,90% { opacity: 1; transform: none; } }
+        ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #0d0b14; }
         ::-webkit-scrollbar-thumb { background: #3a3050; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #554466; }
       `}</style>
 
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 920, margin: '0 auto', padding: '20px 16px 80px' }}>
@@ -146,20 +147,23 @@ export default function App() {
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28 }}>
           <div style={{ textAlign: 'center', flex: 1 }}>
-            <div style={{ fontSize: 10, letterSpacing: 6, color: colors.gold, textTransform: 'uppercase', marginBottom: 6 }}>Chicago</div>
-            <h1 style={{ margin: 0, fontSize: 40, fontWeight: 'normal', color: colors.text, fontFamily: fonts.display, letterSpacing: 2 }}>✦ Stardust ✦</h1>
-            <div style={{ fontSize: 11, letterSpacing: 4, color: colors.purple, textTransform: 'uppercase', marginTop: 3 }}>Club Organizer</div>
+            <img
+              src="https://stardustchi.com/wp-content/uploads/2025/04/Stardust-Logo-Blue-1024x332.png"
+              alt="Stardust Chicago"
+              style={{ width: 210, marginBottom: 4 }}
+            />
+            <div style={{ fontSize: 11, letterSpacing: 4, color: colors.purple, textTransform: 'uppercase', marginTop: 2 }}>Club Organizer</div>
           </div>
           <div style={{ position: 'absolute', right: 0, top: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
             <span style={{ fontSize: 11, color: colors.textFaint }}>{session.user.email}</span>
             <span style={{ fontSize: 10, color: colors.purple, letterSpacing: 1, textTransform: 'uppercase' }}>{role}</span>
-            <button onClick={handleLogout} style={{ background: 'none', border: `1px solid ${colors.border}`, color: colors.textFaint, borderRadius: 4, padding: '3px 10px', cursor: 'pointer', fontSize: 11 }}>Sign out</button>
+            <button onClick={handleLogout} style={{ background: 'none', border: `1px solid ${colors.border}`, color: colors.textFaint, borderRadius: 4, padding: '3px 10px', cursor: 'pointer', fontSize: 11, letterSpacing: '0.5px' }}>Sign out</button>
           </div>
         </div>
 
         {/* Save flash */}
         {saveMsg && (
-          <div style={{ position: 'fixed', top: 20, right: 20, background: '#5acb8a22', border: '1px solid #5acb8a', borderRadius: 8, padding: '8px 18px', color: '#5acb8a', fontSize: 13, zIndex: 100, animation: 'fadein 0.2s' }}>
+          <div style={{ position: 'fixed', top: 20, right: 20, background: '#5acb8a18', border: '1px solid #5acb8a66', borderRadius: 8, padding: '9px 20px', color: '#5acb8a', fontSize: 13, zIndex: 100, animation: 'flash 2s ease forwards', backdropFilter: 'blur(8px)' }}>
             ✓ {saveMsg}
           </div>
         )}
@@ -168,12 +172,12 @@ export default function App() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 28, justifyContent: 'center' }}>
           {TABS.map((tab, i) => (
             <button key={i} onClick={() => setActiveTab(i)} style={{
-              background: activeTab === i ? colors.gold : colors.surface,
+              background: activeTab === i ? colors.gold : 'transparent',
               color: activeTab === i ? '#0d0b14' : colors.textMuted,
-              border: activeTab === i ? 'none' : `1px solid ${colors.border}`,
-              borderRadius: 20, padding: '7px 16px', fontSize: 13, cursor: 'pointer',
-              fontFamily: fonts.body, fontWeight: activeTab === i ? 'bold' : 'normal',
-              transition: 'all 0.2s'
+              border: activeTab === i ? `1px solid ${colors.gold}` : `1px solid ${colors.border}`,
+              borderRadius: 20, padding: '6px 16px', fontSize: 12, cursor: 'pointer',
+              fontFamily: fonts.body, fontWeight: activeTab === i ? '700' : '400',
+              letterSpacing: activeTab === i ? '0.3px' : 0,
             }}>{tab.label}</button>
           ))}
         </div>
