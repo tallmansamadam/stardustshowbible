@@ -25,6 +25,7 @@ export default function App() {
   const [saving, setSaving] = useState(false)
   const [saveMsg, setSaveMsg] = useState('')
   const [loading, setLoading] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -182,9 +183,9 @@ export default function App() {
         {/* Search */}
         <SearchBar notes={notes} posts={posts} onTabSwitch={setActiveTab} />
 
-        {/* ── Tab bar ── */}
+        {/* ── Tab bar (desktop) ── */}
         <div
-          className="tabs-row"
+          className="tabs-row hide-mobile"
           style={{
             display: 'flex', borderBottom: '1px solid rgba(255,255,255,0.07)',
             marginBottom: 32, overflowX: 'auto',
@@ -209,6 +210,45 @@ export default function App() {
             </button>
           ))}
         </div>
+
+        {/* ── Tab bar (mobile) ── */}
+        <div className="show-mobile-only" style={{ justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.07)', marginBottom: 32, paddingBottom: 12 }}>
+          <span style={{ fontSize: 13, color: colors.gold, fontFamily: fonts.body, letterSpacing: '0.6px', textTransform: 'uppercase' }}>
+            {TABS[activeTab].label.replace(/^\p{Emoji_Presentation}\s*/u, '')}
+          </span>
+          <button
+            onClick={() => setMenuOpen(true)}
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '7px 14px', color: colors.textMuted, fontFamily: fonts.mono, fontSize: 12, letterSpacing: '1px' }}
+          >
+            ☰ Menu
+          </button>
+        </div>
+
+        {/* ── Mobile drawer ── */}
+        {menuOpen && (
+          <div className="mobile-drawer" onClick={() => setMenuOpen(false)}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px 20px', borderBottom: '1px solid rgba(255,255,255,0.07)', marginBottom: 8 }}>
+              <span style={{ fontSize: 10, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '3px', textTransform: 'uppercase' }}>Navigate</span>
+              <button onClick={() => setMenuOpen(false)} style={{ background: 'none', border: 'none', color: colors.textFaint, fontSize: 20, padding: '0 4px' }}>×</button>
+            </div>
+            {TABS.map((tab, i) => (
+              <button
+                key={i}
+                onClick={() => { setActiveTab(i); setMenuOpen(false) }}
+                style={{
+                  display: 'block', width: '100%', background: activeTab === i ? 'rgba(212,168,74,0.07)' : 'none',
+                  border: 'none', borderLeft: activeTab === i ? `2px solid ${colors.gold}` : '2px solid transparent',
+                  color: activeTab === i ? colors.gold : colors.textMuted,
+                  padding: '16px 26px', fontSize: 13, textAlign: 'left',
+                  fontFamily: fonts.body, letterSpacing: '0.6px', textTransform: 'uppercase',
+                  transition: 'color 0.15s ease',
+                }}
+              >
+                {tab.label.replace(/^\p{Emoji_Presentation}\s*/u, '')}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* ── Content ── */}
         {loading ? (

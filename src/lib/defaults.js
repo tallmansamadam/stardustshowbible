@@ -384,8 +384,52 @@ last night was one of those. see you friday.
 
 ---
 
+---
+
+## Staff Onboarding
+
+### Before Your First Night
+- Read the Show Bible front to back — once. You should know the tone cold.
+- Know the Karafun room code and how the queue works (patron-controlled, not host-controlled)
+- Know where the mic chargers are and how to swap batteries mid-night without breaking the energy
+- Know the signal chain: Mics → X32 → PA. Bluetooth is for backing tracks only.
+- Know the lighting phases (see Sound & Tech tab)
+- Know who to call if something breaks (see Contacts tab)
+
+### The Night Of Tab
+The Night Of tab has the full pre/during/post checklist. Run it every night without exception. It auto-resets daily.
+
+### The One Rule
+If something goes wrong on stage, the room takes its cue from you. Laugh it off, fix it fast, move on. Dead air and visible panic are the only real failures.
+
+### Voice & Conduct
+- You're part of the show — dress like it
+- No phones behind the booth during a set (photos OK, scrolling not)
+- Drinks at the bar, not at the equipment
+- If a patron is struggling, encourage — don't rescue. Let them own it.
+- Disputes or difficult patrons: loop in bar staff, don't escalate solo
+
+### Karaoke-Specific
+- The queue is first-come first-served — don't jump the list for regulars
+- Hype everyone equally. The nervous first-timer needs it more than the regular.
+- Between singers: 60 seconds max. Keep it moving.
+- Disco/Funk direction: if the night is going slow, suggest a Donna Summer or Bee Gees from the floor — don't take over the queue.
+
+### DJ-Specific
+- No hip hop. No exceptions.
+- Read the crowd at 30 min and 60 min. Adjust energy accordingly.
+- Log your set after every night (DJ Sets tab → Setlist Log) — track what worked.
+- Coordinate with sound before you start: bass levels, monitor mix.
+
+### Social During the Night
+- If something great happens, capture it. A 15-second clip is better than nothing.
+- Tag @stardustchicago. Use the hashtag bank (Show Bible → Social Media).
+- Don't post anything unflattering of patrons without consent.
+
 ## To Do
-- [ ] Staff onboarding checklist`,
+- [ ] Finalize tagline
+- [ ] Design press kit one-pager PDF
+- [ ] Add press contact info`,
 
   karaoke: `## Karaoke Host Notes
 

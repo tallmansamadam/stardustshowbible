@@ -236,10 +236,11 @@ export default function PostsTab({ posts, canEdit, onAdd, onUpdate, onDelete }) 
 
 // ── Week View ──────────────────────────────────────────────────────────────────
 function WeekView({ posts, filterDate, onFilterDate }) {
+  const [weekOffset, setWeekOffset] = useState(0)
   const today = new Date()
   const dayOfWeek = today.getDay()
   const monday = new Date(today)
-  monday.setDate(today.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1))
+  monday.setDate(today.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1) + weekOffset * 7)
 
   const days = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(monday)
@@ -248,10 +249,18 @@ function WeekView({ posts, filterDate, onFilterDate }) {
   })
 
   const todayStr = today.toISOString().slice(0, 10)
+  const weekLabel = weekOffset === 0 ? 'This Week' : weekOffset === 1 ? 'Next Week' : weekOffset === -1 ? 'Last Week' : `${monday.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} – ${days[6].toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
 
   return (
     <div style={{ marginBottom: 20 }}>
-      <div style={{ fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: 8 }}>This Week</div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+        <div style={{ fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase' }}>{weekLabel}</div>
+        <div style={{ display: 'flex', gap: 4 }}>
+          <button onClick={() => setWeekOffset(w => w - 1)} style={{ background: 'none', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4, color: colors.textFaint, padding: '2px 8px', fontSize: 11, fontFamily: fonts.mono }}>‹</button>
+          {weekOffset !== 0 && <button onClick={() => setWeekOffset(0)} style={{ background: 'none', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4, color: colors.textFaint, padding: '2px 8px', fontSize: 9, fontFamily: fonts.mono, letterSpacing: '0.5px' }}>today</button>}
+          <button onClick={() => setWeekOffset(w => w + 1)} style={{ background: 'none', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4, color: colors.textFaint, padding: '2px 8px', fontSize: 11, fontFamily: fonts.mono }}>›</button>
+        </div>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 5 }}>
         {days.map(day => {
           const dateStr = day.toISOString().slice(0, 10)

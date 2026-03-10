@@ -129,15 +129,28 @@
       select option { background: #14112a; color: #f0e8d0; }
 
       /* ── Mobile ─────────────────────────────────────────── */
+      .show-mobile-only { display: none !important; }
       @media (max-width: 640px) {
         .grid-2, .grid-3, .grid-4 {
           grid-template-columns: 1fr !important;
         }
         .hide-mobile { display: none !important; }
+        .show-mobile-only { display: flex !important; }
         .stack-mobile {
           flex-direction: column !important;
           align-items: stretch !important;
         }
+      }
+
+      /* ── Mobile nav drawer ──────────────────────────────── */
+      .mobile-drawer {
+        position: fixed; inset: 0; z-index: 100;
+        background: rgba(9,8,16,0.97);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        display: flex; flex-direction: column;
+        padding: 24px 0;
+        animation: fadein 0.18s ease;
       }
     </style>
   </head>

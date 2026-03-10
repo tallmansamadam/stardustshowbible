@@ -16,32 +16,56 @@ const TAG_COLORS = {
 export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) {
   const [editing, setEditing] = useState(null)
   const [creating, setCreating] = useState(false)
+  const [loggingTonight, setLoggingTonight] = useState(false)
   const [confirming, setConfirming] = useState(null)
   const [tagFilter, setTagFilter] = useState('all')
 
-  const sorted = [
-    ...(notes || []).filter(n => n.pinned && (tagFilter === 'all' || n.tag === tagFilter)),
-    ...(notes || []).filter(n => !n.pinned && (tagFilter === 'all' || n.tag === tagFilter)),
-  ]
+  const today = new Date().toISOString().slice(0, 10)
+
+  // Setlist view: sort by date desc, no pin logic
+  const isSetlistView = tagFilter === 'setlist'
+  const isLogView = tagFilter === 'log'
+
+  const filtered = (notes || []).filter(n => tagFilter === 'all' || n.tag === tagFilter)
+  const sorted = isSetlistView
+    ? [...filtered].sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+    : [
+        ...filtered.filter(n => n.pinned),
+        ...filtered.filter(n => !n.pinned),
+      ]
 
   return (
     <div>
       {/* Section header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 22 }}>
         <h2 style={{ margin: 0, fontSize: 24, fontWeight: 300, color: colors.gold, fontFamily: fonts.display, letterSpacing: 1 }}>
-          Notes &amp; Ideas
+          {isSetlistView ? 'Setlist Archive' : isLogView ? 'Night Log' : 'Notes & Ideas'}
         </h2>
-        {canEdit && !creating && (
-          <button
-            onClick={() => setCreating(true)}
-            style={{
-              background: 'rgba(212,168,74,0.08)', border: '1px solid rgba(212,168,74,0.22)',
-              color: colors.gold, borderRadius: 8, padding: '7px 16px',
-              fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
-            }}
-          >
-            + New Note
-          </button>
+        {canEdit && !creating && !loggingTonight && (
+          <div style={{ display: 'flex', gap: 8 }}>
+            {isLogView && (
+              <button
+                onClick={() => setLoggingTonight(true)}
+                style={{
+                  background: 'rgba(90,203,138,0.1)', border: '1px solid rgba(90,203,138,0.28)',
+                  color: '#5acb8a', borderRadius: 8, padding: '7px 16px',
+                  fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
+                }}
+              >
+                + Log Tonight
+              </button>
+            )}
+            <button
+              onClick={() => setCreating(true)}
+              style={{
+                background: 'rgba(212,168,74,0.08)', border: '1px solid rgba(212,168,74,0.22)',
+                color: colors.gold, borderRadius: 8, padding: '7px 16px',
+                fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
+              }}
+            >
+              + New Note
+            </button>
+          </div>
         )}
       </div>
 
@@ -57,6 +81,14 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
           }}>{t}</button>
         ))}
       </div>
+
+      {loggingTonight && (
+        <NoteForm
+          initial={{ title: `Night Log — ${today}`, content: '', tag: 'log', date: today, pinned: false }}
+          onSave={async n => { await onAdd(n); setLoggingTonight(false) }}
+          onCancel={() => setLoggingTonight(false)}
+        />
+      )}
 
       {creating && (
         <NoteForm onSave={async n => { await onAdd(n); setCreating(false) }} onCancel={() => setCreating(false)} />
@@ -134,8 +166,8 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
                     </p>
 
                     {note.date && (
-                      <div style={{ marginTop: 12, fontSize: 10, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '0.5px' }}>
-                        {note.date}
+                      <div style={{ marginTop: 12, fontSize: isSetlistView ? 12 : 10, color: isSetlistView ? colors.gold : colors.textFaint, fontFamily: fonts.mono, letterSpacing: '0.5px', fontWeight: isSetlistView ? '400' : '300' }}>
+                        {isSetlistView ? '📅 ' : ''}{note.date}
                       </div>
                     )}
                   </>

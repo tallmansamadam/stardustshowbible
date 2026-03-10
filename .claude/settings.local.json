@@ -4,7 +4,11 @@
       "Bash(git init:*)",
       "Bash(git commit:*)",
       "Bash(git add:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git push:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(gh secret:*)"
     ]
   }
 }
