@@ -260,7 +260,7 @@ export default function App() {
             {activeTab === 0 && <NotesTab notes={notes} canEdit={canEdit(role, 'notes')} onAdd={addNote} onUpdate={updateNote} onDelete={deleteNote} />}
             {activeTab === 1 && <PostsTab posts={posts} canEdit={canEdit(role, 'posts')} onAdd={addPost} onUpdate={updatePost} onDelete={deletePost} />}
             {activeTab === 2 && <MarkdownEditor title="Show Bible" value={content.showbible} canEdit={canEdit(role, 'showbible')} saving={saving} onSave={v => saveContent('showbible', v)} />}
-            {activeTab === 3 && <NightOf />}
+            {activeTab === 3 && <NightOf onAdd={addNote} session={session} />}
             {activeTab === 4 && <MarkdownEditor title="Karaoke Notes" value={content.karaoke} canEdit={canEdit(role, 'karaoke')} saving={saving} onSave={v => saveContent('karaoke', v)} />}
             {activeTab === 5 && <MarkdownEditor title="DJ Set Notes" value={content.djsets} canEdit={canEdit(role, 'djsets')} saving={saving} onSave={v => saveContent('djsets', v)} />}
             {activeTab === 6 && <MarkdownEditor title="Event Planning" value={content.planning} canEdit={canEdit(role, 'planning')} saving={saving} onSave={v => saveContent('planning', v)} />}

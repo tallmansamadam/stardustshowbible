@@ -44,19 +44,51 @@ const CHECKLIST = {
   },
 }
 
-export default function NightOf() {
+export default function NightOf({ onAdd, session }) {
   const today = new Date().toISOString().slice(0, 10)
   const storageKey = `nightof-${today}`
+  const notesKey  = `nightof-notes-${today}`
 
   const [checked, setChecked] = useState(() => {
     try { return JSON.parse(localStorage.getItem(storageKey)) || {} }
     catch { return {} }
   })
 
+  const [notes, setNotes] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(notesKey)) || { crowd: '', tech: '' } }
+    catch { return { crowd: '', tech: '' } }
+  })
+
+  const [saving, setSaving] = useState({ crowd: false, tech: false })
+  const [saved,  setSaved]  = useState({ crowd: false, tech: false })
+
   const toggle = (key) => {
     const next = { ...checked, [key]: !checked[key] }
     setChecked(next)
     localStorage.setItem(storageKey, JSON.stringify(next))
+  }
+
+  const updateNote = (field, value) => {
+    const next = { ...notes, [field]: value }
+    setNotes(next)
+    localStorage.setItem(notesKey, JSON.stringify(next))
+  }
+
+  const saveNote = async (field) => {
+    const value = notes[field]?.trim()
+    if (!value || !onAdd) return
+    setSaving(s => ({ ...s, [field]: true }))
+    const isCrowd = field === 'crowd'
+    await onAdd({
+      title: `${isCrowd ? 'Crowd Read' : 'Tech Notes'} — ${today}`,
+      content: value,
+      tag: isCrowd ? 'log' : 'sound',
+      date: today,
+      pinned: false,
+    })
+    setSaving(s => ({ ...s, [field]: false }))
+    setSaved(s => ({ ...s, [field]: true }))
+    setTimeout(() => setSaved(s => ({ ...s, [field]: false })), 2500)
   }
 
   const reset = () => {
@@ -151,6 +183,56 @@ export default function NightOf() {
           ✦ &nbsp; All clear — have a great night &nbsp; ✦
         </div>
       )}
+
+      {/* ── Night notes ── */}
+      <div style={{ display: 'grid', gap: 14, marginTop: 8 }}>
+        {[
+          { field: 'crowd', label: 'Crowd Read', color: '#d4a84a', placeholder: 'Energy level, what worked, what cleared the floor, peak moment, repeat songs…', tag: 'log' },
+          { field: 'tech',  label: 'Tech Notes', color: '#4ab8e0', placeholder: 'Equipment issues, sound problems, anything to flag for next time…',             tag: 'sound' },
+        ].map(({ field, label, color, placeholder }) => (
+          <div key={field} className="glass" style={{ borderRadius: 12, overflow: 'hidden' }}>
+            <div style={{ height: 2, background: `linear-gradient(to right, ${color}66, transparent)` }} />
+            <div style={{ padding: '16px 20px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+                <label style={{ fontSize: 10, color, fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase' }}>
+                  {label}
+                </label>
+                {notes[field]?.trim() && onAdd && (
+                  <button
+                    onClick={() => saveNote(field)}
+                    disabled={saving[field]}
+                    style={{
+                      background: saved[field] ? 'rgba(90,203,138,0.1)' : `${color}14`,
+                      border: `1px solid ${saved[field] ? 'rgba(90,203,138,0.3)' : color + '44'}`,
+                      color: saved[field] ? colors.green : color,
+                      borderRadius: 6, padding: '4px 12px',
+                      fontSize: 10, fontFamily: fonts.mono, letterSpacing: '0.5px',
+                    }}
+                  >
+                    {saved[field] ? '✓ Saved to Notes' : saving[field] ? 'Saving…' : '↑ Save to Notes'}
+                  </button>
+                )}
+              </div>
+              <textarea
+                rows={4}
+                placeholder={placeholder}
+                value={notes[field]}
+                onChange={e => updateNote(field, e.target.value)}
+                style={{
+                  width: '100%', background: 'rgba(0,0,0,0.35)',
+                  border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8,
+                  padding: '10px 13px', color: colors.text,
+                  fontSize: 13, fontFamily: fonts.body, lineHeight: 1.7,
+                  resize: 'vertical',
+                }}
+              />
+              <div style={{ marginTop: 6, fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '1px' }}>
+                Auto-saved locally · {field === 'crowd' ? 'Saves as log note' : 'Saves as sound note'}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
