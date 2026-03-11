@@ -1,76 +1,149 @@
 import { useState } from 'react'
 import { colors, fonts } from './styles'
 
-const TAGS = ['general', 'electro-swing', 'karaoke', 'dj', 'marketing', 'sound', 'log', 'setlist']
+const TAGS = ['general', 'electro-swing', 'karaoke', 'dj', 'marketing', 'sound', 'log', 'setlist', 'incident']
 const TAG_COLORS = {
-  general: 'rgba(255,255,255,0.3)',
-  'electro-swing': '#d4a84a',
-  karaoke: '#e06060',
-  dj: '#6090e0',
-  marketing: '#a060d0',
-  sound: '#4ab8e0',
-  log: '#5acb8a',
-  setlist: '#e0a84a',
+  general:        'rgba(255,255,255,0.3)',
+  'electro-swing':'#d4a84a',
+  karaoke:        '#e06060',
+  dj:             '#6090e0',
+  marketing:      '#a060d0',
+  sound:          '#4ab8e0',
+  log:            '#5acb8a',
+  setlist:        '#e0a84a',
+  incident:       '#e06060',
+}
+
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function Highlight({ text, query }) {
+  if (!query || !text) return <>{text}</>
+  const parts = text.split(new RegExp(`(${escapeRegex(query)})`, 'gi'))
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase()
+          ? <mark key={i} style={{ background: 'rgba(212,168,74,0.28)', color: colors.text, borderRadius: 2, padding: '0 2px' }}>{part}</mark>
+          : part
+      )}
+    </>
+  )
 }
 
 export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) {
-  const [editing, setEditing] = useState(null)
-  const [creating, setCreating] = useState(false)
+  const [editing, setEditing]           = useState(null)
+  const [creating, setCreating]         = useState(false)
   const [loggingTonight, setLoggingTonight] = useState(false)
-  const [confirming, setConfirming] = useState(null)
-  const [tagFilter, setTagFilter] = useState('all')
+  const [loggingIncident, setLoggingIncident] = useState(false)
+  const [confirming, setConfirming]     = useState(null)
+  const [tagFilter, setTagFilter]       = useState('all')
+  const [search, setSearch]             = useState('')
 
   const today = new Date().toISOString().slice(0, 10)
+  const q = search.trim().toLowerCase()
 
-  // Setlist view: sort by date desc, no pin logic
-  const isSetlistView = tagFilter === 'setlist'
-  const isLogView = tagFilter === 'log'
+  const isSetlistView  = tagFilter === 'setlist'
+  const isLogView      = tagFilter === 'log'
+  const isIncidentView = tagFilter === 'incident'
 
-  const filtered = (notes || []).filter(n => tagFilter === 'all' || n.tag === tagFilter)
-  const sorted = isSetlistView
+  const sectionTitle = isSetlistView  ? 'Setlist Archive'
+                     : isLogView      ? 'Night Log'
+                     : isIncidentView ? 'Incident Log'
+                     : 'Notes & Ideas'
+
+  // Filter by tag, then by search query
+  const tagFiltered = (notes || []).filter(n => tagFilter === 'all' || n.tag === tagFilter)
+  const filtered = q
+    ? tagFiltered.filter(n =>
+        n.title?.toLowerCase().includes(q) ||
+        n.content?.toLowerCase().includes(q) ||
+        n.tag?.toLowerCase().includes(q)
+      )
+    : tagFiltered
+
+  // Sort: setlist + incident → date desc; others → pinned first
+  const sorted = (isSetlistView || isIncidentView)
     ? [...filtered].sort((a, b) => (b.date || '').localeCompare(a.date || ''))
     : [
         ...filtered.filter(n => n.pinned),
         ...filtered.filter(n => !n.pinned),
       ]
 
+  const hasAnyNotes = (notes || []).length > 0
+
   return (
     <div>
-      {/* Section header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 22 }}>
-        <h2 style={{ margin: 0, fontSize: 24, fontWeight: 300, color: colors.gold, fontFamily: fonts.display, letterSpacing: 1 }}>
-          {isSetlistView ? 'Setlist Archive' : isLogView ? 'Night Log' : 'Notes & Ideas'}
+      {/* Header */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+        <h2 style={{ margin: 0, fontSize: 24, fontWeight: 300, color: isIncidentView ? colors.red : colors.gold, fontFamily: fonts.display, letterSpacing: 1 }}>
+          {sectionTitle}
         </h2>
-        {canEdit && !creating && !loggingTonight && (
+        {canEdit && !creating && !loggingTonight && !loggingIncident && (
           <div style={{ display: 'flex', gap: 8 }}>
             {isLogView && (
-              <button
-                onClick={() => setLoggingTonight(true)}
-                style={{
-                  background: 'rgba(90,203,138,0.1)', border: '1px solid rgba(90,203,138,0.28)',
-                  color: '#5acb8a', borderRadius: 8, padding: '7px 16px',
-                  fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
-                }}
-              >
+              <button onClick={() => setLoggingTonight(true)} style={{
+                background: 'rgba(90,203,138,0.1)', border: '1px solid rgba(90,203,138,0.28)',
+                color: '#5acb8a', borderRadius: 8, padding: '7px 16px',
+                fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
+              }}>
                 + Log Tonight
               </button>
             )}
-            <button
-              onClick={() => setCreating(true)}
-              style={{
-                background: 'rgba(212,168,74,0.08)', border: '1px solid rgba(212,168,74,0.22)',
-                color: colors.gold, borderRadius: 8, padding: '7px 16px',
+            {isIncidentView && (
+              <button onClick={() => setLoggingIncident(true)} style={{
+                background: 'rgba(224,96,96,0.1)', border: '1px solid rgba(224,96,96,0.28)',
+                color: colors.red, borderRadius: 8, padding: '7px 16px',
                 fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
-              }}
-            >
+              }}>
+                + Log Incident
+              </button>
+            )}
+            <button onClick={() => setCreating(true)} style={{
+              background: 'rgba(212,168,74,0.08)', border: '1px solid rgba(212,168,74,0.22)',
+              color: colors.gold, borderRadius: 8, padding: '7px 16px',
+              fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
+            }}>
               + New Note
             </button>
           </div>
         )}
       </div>
 
-      {/* Tag filter */}
-      <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginBottom: 16 }}>
+      {/* Search bar */}
+      <div style={{ position: 'relative', marginBottom: 14 }}>
+        <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', fontSize: 13, opacity: 0.3, pointerEvents: 'none' }}>⌕</span>
+        <input
+          type="text"
+          placeholder="Search notes…"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{
+            width: '100%', background: 'rgba(0,0,0,0.3)',
+            border: `1px solid ${q ? 'rgba(212,168,74,0.3)' : 'rgba(255,255,255,0.08)'}`,
+            borderRadius: 8, padding: '8px 36px 8px 34px',
+            color: colors.text, fontSize: 13, fontFamily: fonts.body,
+          }}
+        />
+        {q && (
+          <button
+            onClick={() => setSearch('')}
+            style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: colors.textFaint, fontSize: 14, padding: '0 4px', cursor: 'pointer' }}
+          >×</button>
+        )}
+      </div>
+
+      {/* Search result count */}
+      {q && (
+        <div style={{ marginBottom: 10, fontSize: 10, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '1px' }}>
+          {filtered.length === 0 ? 'No matches' : `${filtered.length} match${filtered.length === 1 ? '' : 'es'}`}
+          {tagFilter !== 'all' && ` in ${tagFilter}`}
+        </div>
+      )}
+
+      {/* Tag filters */}
+      <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginBottom: 18 }}>
         {['all', ...TAGS].map(t => (
           <button key={t} onClick={() => setTagFilter(t)} style={{
             fontSize: 10, padding: '3px 10px', borderRadius: 20,
@@ -82,6 +155,7 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
         ))}
       </div>
 
+      {/* Forms */}
       {loggingTonight && (
         <NoteForm
           initial={{ title: `Night Log — ${today}`, content: '', tag: 'log', date: today, pinned: false }}
@@ -89,28 +163,40 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
           onCancel={() => setLoggingTonight(false)}
         />
       )}
-
+      {loggingIncident && (
+        <NoteForm
+          initial={{ title: `Incident — ${today}`, content: '', tag: 'incident', date: today, pinned: false }}
+          onSave={async n => { await onAdd(n); setLoggingIncident(false) }}
+          onCancel={() => setLoggingIncident(false)}
+        />
+      )}
       {creating && (
-        <NoteForm onSave={async n => { await onAdd(n); setCreating(false) }} onCancel={() => setCreating(false)} />
+        <NoteForm
+          onSave={async n => { await onAdd(n); setCreating(false) }}
+          onCancel={() => setCreating(false)}
+        />
       )}
 
-      {(notes || []).length === 0 && !creating && (
+      {/* Empty states */}
+      {!hasAnyNotes && !creating && (
         <div style={{ textAlign: 'center', padding: '70px 20px', color: colors.textFaint, fontFamily: fonts.mono, fontSize: 12, letterSpacing: '1px' }}>
           <div style={{ fontSize: 32, marginBottom: 14, opacity: 0.25, fontFamily: fonts.display }}>✦</div>
           No notes yet
         </div>
       )}
+      {hasAnyNotes && filtered.length === 0 && !creating && !loggingTonight && !loggingIncident && (
+        <div style={{ textAlign: 'center', padding: '40px 20px', color: colors.textFaint, fontFamily: fonts.mono, fontSize: 11, letterSpacing: '1px' }}>
+          {q ? `No notes matching "${search}"` : `No ${tagFilter} notes`}
+        </div>
+      )}
 
+      {/* Notes list */}
       <div style={{ display: 'grid', gap: 10 }}>
         {sorted.map(note => {
           const tagColor = TAG_COLORS[note.tag] || 'rgba(255,255,255,0.3)'
+          const isDateView = isSetlistView || isIncidentView
           return (
-            <div
-              key={note.id}
-              className="glass card"
-              style={{ borderRadius: 12, overflow: 'hidden' }}
-            >
-              {/* Tag accent bar */}
+            <div key={note.id} className="glass card" style={{ borderRadius: 12, overflow: 'hidden' }}>
               <div style={{ height: 2, background: `linear-gradient(to right, ${tagColor}88, transparent)` }} />
 
               <div style={{ padding: '16px 20px' }}>
@@ -125,13 +211,9 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
                         <span style={{ fontSize: 16, fontWeight: 400, color: colors.text, fontFamily: fonts.display, letterSpacing: '0.3px' }}>
-                          {note.title}
+                          <Highlight text={note.title} query={q} />
                         </span>
-                        <span style={{
-                          fontSize: 10, padding: '2px 9px', borderRadius: 20,
-                          background: tagColor + '22', color: tagColor,
-                          fontFamily: fonts.mono, letterSpacing: '0.5px',
-                        }}>
+                        <span style={{ fontSize: 10, padding: '2px 9px', borderRadius: 20, background: tagColor + '22', color: tagColor, fontFamily: fonts.mono, letterSpacing: '0.5px' }}>
                           {note.tag}
                         </span>
                       </div>
@@ -146,13 +228,15 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
                             </>
                           ) : (
                             <>
-                              <button
-                                onClick={() => onUpdate({ ...note, pinned: !note.pinned })}
-                                style={{ background: 'none', border: `1px solid rgba(255,255,255,0.1)`, color: note.pinned ? colors.gold : colors.textFaint, borderRadius: 4, padding: '3px 8px', cursor: 'pointer', fontSize: 12 }}
-                                title={note.pinned ? 'Unpin' : 'Pin'}
-                              >
-                                {note.pinned ? '★' : '☆'}
-                              </button>
+                              {!isIncidentView && (
+                                <button
+                                  onClick={() => onUpdate({ ...note, pinned: !note.pinned })}
+                                  style={{ background: 'none', border: `1px solid rgba(255,255,255,0.1)`, color: note.pinned ? colors.gold : colors.textFaint, borderRadius: 4, padding: '3px 8px', cursor: 'pointer', fontSize: 12 }}
+                                  title={note.pinned ? 'Unpin' : 'Pin'}
+                                >
+                                  {note.pinned ? '★' : '☆'}
+                                </button>
+                              )}
                               <button onClick={() => setEditing(note.id)} style={btnGhost}>Edit</button>
                               <button onClick={() => setConfirming(note.id)} style={{ ...btnGhost, color: colors.textFaint }}>✕</button>
                             </>
@@ -161,13 +245,15 @@ export default function NotesTab({ notes, canEdit, onAdd, onUpdate, onDelete }) 
                       )}
                     </div>
 
-                    <p style={{ margin: 0, fontSize: 13, color: colors.textMuted, lineHeight: 1.75, whiteSpace: 'pre-wrap', fontFamily: fonts.body }}>
-                      {note.content}
-                    </p>
+                    {note.content && (
+                      <p style={{ margin: 0, fontSize: 13, color: colors.textMuted, lineHeight: 1.75, whiteSpace: 'pre-wrap', fontFamily: fonts.body }}>
+                        <Highlight text={note.content} query={q} />
+                      </p>
+                    )}
 
                     {note.date && (
-                      <div style={{ marginTop: 12, fontSize: isSetlistView ? 12 : 10, color: isSetlistView ? colors.gold : colors.textFaint, fontFamily: fonts.mono, letterSpacing: '0.5px', fontWeight: isSetlistView ? '400' : '300' }}>
-                        {isSetlistView ? '📅 ' : ''}{note.date}
+                      <div style={{ marginTop: 10, fontSize: isDateView ? 12 : 10, color: isDateView ? tagColor : colors.textFaint, fontFamily: fonts.mono, letterSpacing: '0.5px' }}>
+                        {isDateView ? '📅 ' : ''}{note.date}
                       </div>
                     )}
                   </>
@@ -224,11 +310,7 @@ function NoteForm({ initial, onSave, onCancel }) {
       </div>
 
       <div style={{ display: 'flex', gap: 10 }}>
-        <button
-          onClick={handle}
-          disabled={saving || !form.title.trim()}
-          style={btnPrimary(saving || !form.title.trim())}
-        >
+        <button onClick={handle} disabled={saving || !form.title.trim()} style={btnPrimary(saving || !form.title.trim())}>
           {saving ? 'Saving…' : 'Save Note'}
         </button>
         <button onClick={onCancel} style={btnGhost}>Cancel</button>
