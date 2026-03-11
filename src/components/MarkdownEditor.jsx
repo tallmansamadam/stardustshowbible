@@ -12,45 +12,82 @@ export default function MarkdownEditor({ title, value, canEdit, onSave, saving }
     setEditing(false)
   }
 
-  const rendered = (value || '').split('\n').map((line, i) => {
-    if (line.startsWith('## '))  return (
-      <h2 key={i} style={{ color: colors.gold, fontWeight: 300, fontSize: 22, marginTop: 28, marginBottom: 10, fontFamily: fonts.display, letterSpacing: '0.5px' }}>
+  const renderInline = (text, key) => {
+    const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/)
+    return (
+      <span key={key}>
+        {parts.map((part, j) => {
+          if (part.startsWith('**') && part.endsWith('**'))
+            return <strong key={j} style={{ color: colors.text, fontWeight: 500 }}>{part.slice(2, -2)}</strong>
+          if (part.startsWith('*') && part.endsWith('*'))
+            return <em key={j} style={{ color: colors.textMuted, fontStyle: 'italic' }}>{part.slice(1, -1)}</em>
+          return part
+        })}
+      </span>
+    )
+  }
+
+  const lines = (value || '').split('\n')
+  const rendered = lines.map((line, i) => {
+    const isFirst = i === 0
+
+    if (line.startsWith('## ')) return (
+      <h2 key={i} style={{
+        color: colors.gold, fontWeight: 300, fontSize: 22,
+        marginTop: isFirst ? 0 : 36, marginBottom: 12,
+        fontFamily: fonts.display, letterSpacing: '0.5px',
+        paddingBottom: 8, borderBottom: '1px solid rgba(212,168,74,0.12)',
+      }}>
         {line.slice(3)}
       </h2>
     )
     if (line.startsWith('### ')) return (
-      <h3 key={i} style={{ color: colors.purple, fontWeight: 400, fontSize: 14, marginTop: 18, marginBottom: 6, fontFamily: fonts.mono, letterSpacing: '1px', textTransform: 'uppercase' }}>
+      <h3 key={i} style={{
+        color: colors.purple, fontWeight: 400, fontSize: 11,
+        marginTop: 20, marginBottom: 8,
+        fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase',
+      }}>
         {line.slice(4)}
       </h3>
     )
+    if (line.startsWith('#### ')) return (
+      <h4 key={i} style={{
+        color: colors.textMuted, fontWeight: 500, fontSize: 13,
+        marginTop: 14, marginBottom: 6, fontFamily: fonts.body,
+      }}>
+        {line.slice(5)}
+      </h4>
+    )
+    if (line === '---') return (
+      <div key={i} style={{ margin: '24px 0', display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(212,168,74,0.18), transparent)' }} />
+        <span style={{ color: 'rgba(212,168,74,0.25)', fontSize: 8 }}>✦</span>
+        <div style={{ flex: 1, height: 1, background: 'linear-gradient(to left, rgba(212,168,74,0.18), transparent)' }} />
+      </div>
+    )
     if (line.startsWith('- [ ] ')) return (
-      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 6, fontSize: 13, color: colors.textMuted, fontFamily: fonts.body }}>
-        <span style={{ color: 'rgba(255,255,255,0.2)', marginTop: 1, flexShrink: 0, fontSize: 15 }}>☐</span>
-        <span style={{ lineHeight: 1.7 }}>{line.slice(6)}</span>
+      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 7, fontSize: 13, color: colors.textMuted, fontFamily: fonts.body }}>
+        <span style={{ color: 'rgba(255,255,255,0.2)', marginTop: 2, flexShrink: 0, fontSize: 14 }}>☐</span>
+        <span style={{ lineHeight: 1.7 }}>{renderInline(line.slice(6))}</span>
       </div>
     )
     if (line.startsWith('- [x] ')) return (
-      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 6, fontSize: 13, color: colors.textFaint, fontFamily: fonts.body }}>
-        <span style={{ color: colors.green, marginTop: 1, flexShrink: 0, fontSize: 15 }}>☑</span>
+      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 7, fontSize: 13, color: colors.textFaint, fontFamily: fonts.body }}>
+        <span style={{ color: colors.green, marginTop: 2, flexShrink: 0, fontSize: 14 }}>☑</span>
         <span style={{ textDecoration: 'line-through', lineHeight: 1.7 }}>{line.slice(6)}</span>
       </div>
     )
     if (line.startsWith('- ')) return (
-      <div key={i} style={{ paddingLeft: 18, marginBottom: 5, fontSize: 13, color: colors.textMuted, fontFamily: fonts.body, lineHeight: 1.7 }}>
-        <span style={{ color: colors.gold, marginRight: 8, opacity: 0.6 }}>·</span>
-        {line.slice(2)}
+      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, paddingLeft: 4, marginBottom: 6, fontSize: 13, color: colors.textMuted, fontFamily: fonts.body, lineHeight: 1.7 }}>
+        <span style={{ color: colors.gold, opacity: 0.5, flexShrink: 0, marginTop: 2, fontSize: 10 }}>◆</span>
+        <span>{renderInline(line.slice(2))}</span>
       </div>
     )
-    if (line === '') return <div key={i} style={{ height: 10 }} />
+    if (line === '') return <div key={i} style={{ height: 8 }} />
 
-    const parts = line.split(/(\*\*[^*]+\*\*)/)
     return (
-      <p key={i} style={{ margin: '0 0 5px', fontSize: 13, color: colors.textMuted, lineHeight: 1.8, fontFamily: fonts.body }}>
-        {parts.map((part, j) =>
-          part.startsWith('**') && part.endsWith('**')
-            ? <strong key={j} style={{ color: colors.text, fontWeight: 500 }}>{part.slice(2, -2)}</strong>
-            : part
-        )}
+      <p key={i} style={{ margin: '0 0 6px', fontSize: 13, color: colors.textMuted, lineHeight: 1.85, fontFamily: fonts.body }}>
+        {renderInline(line)}
       </p>
     )
   })
@@ -123,7 +160,7 @@ export default function MarkdownEditor({ title, value, canEdit, onSave, saving }
       ) : (
         <div
           className="glass card"
-          style={{ borderRadius: 12, padding: '24px 28px' }}
+          style={{ borderRadius: 12, padding: '28px 32px' }}
         >
           {rendered}
         </div>
