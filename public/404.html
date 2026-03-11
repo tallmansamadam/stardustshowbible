@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      // GitHub Pages SPA redirect fix
+      // Captures the full URL and redirects to index.html with it encoded as a query param
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 2).join('/') +
+        '/?p=' + encodeURIComponent(l.pathname.slice(1) + l.search) +
+        (l.hash || '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
