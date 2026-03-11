@@ -165,6 +165,8 @@ A single-page document (PDF) sent to media contacts, venue directories, and even
 Stardust Chicago is a bar and live entertainment venue in River North bringing karaoke nights, DJ sets, and the city's only regular electro-swing night to one intimate room. We're warm, theatrical, and built for people who want a real night out — not a bottle-service transaction.
 
 **What's On**
+- Monday: Industry Night (potential — see Planning)
+- Tuesday: Movie Night (potential — see Planning)
 - Friday & Saturday: Karaoke + DJ nights
 - Electro Swing Sundays (launching April 2026) — featuring the sounds of Caravan Palace, Parov Stelar, and classic swing reimagined
 
@@ -196,7 +198,9 @@ Stardust Chicago is a bar and live entertainment venue in River North bringing k
 1. **Karaoke Culture** — Celebrate performers, funny moments, crowd energy
 2. **DJ Nights** — Energy, setlists, behind-the-scenes
 3. **Electro Swing Sundays** — Educate + excite (many people don't know the genre)
-4. **Community** — Regulars, staff spotlights, neighborhood love
+4. **Industry Night** — Behind-the-bar culture, hospitality community, staff love
+5. **Movie Night** — Film picks, atmosphere, themed drinks and visuals
+6. **Community** — Regulars, staff spotlights, neighborhood love
 
 ### Platform Focus
 - **Instagram**: Main hub. Reels > static. Target 4x/week.
@@ -528,6 +532,8 @@ Karafun does not support restricting song selection by genre or era for patrons 
   djsets: `## DJ Set Notes
 
 ### Resident Nights
+- **Monday** *(potential)*: Industry Night — late-industry crowd, deeper cuts okay, looser energy
+- **Tuesday** *(potential)*: Movie Night — ambient/score-adjacent or themed soundtrack sets; background not foreground
 - **Friday**: House/Top 40 crossover — mixed age crowd, keep it accessible
 - **Saturday**: More energy, EDM-adjacent okay, read the floor
 
@@ -592,6 +598,66 @@ Include: date, venue energy (1–5), peak moment, what cleared the floor, songs 
 - Week 2: Outreach to vintage shops + press contacts
 - Week 3: Promo art finalized, event page live on all platforms
 - Week 4 (target): **ELECTRO SWING SUNDAY LAUNCH** 🎉
+
+---
+
+## Industry Night — Mondays (Potential)
+
+### Concept
+A low-key Monday night for hospitality workers, creatives, and industry folks — the people who work weekends and finally have a night off. Loose, late, and unpretentious. A place where people in the business can just be a customer for once.
+
+### Why It Works
+- Mondays are dead for most bars — any draw is net new revenue
+- Industry people are loyal, social, and influential. One bartender tells ten people.
+- Low production cost: no live act needed, just the right DJ and a welcoming room
+- Word-of-mouth format — it shouldn't feel marketed
+
+### Format
+- Doors open late (9 or 10pm)
+- DJ set: deeper cuts, more eclectic, less commercial — the crowd knows music
+- Industry discount on drinks (or a signature cheap shot — keeps it accessible)
+- Keep it small and intimate; if it outgrows the room, that's a good problem
+
+### To Do
+- [ ] Confirm management buy-in on Monday programming
+- [ ] Identify a DJ or resident who fits the vibe
+- [ ] Test run: soft launch one Monday with no marketing, word-of-mouth only
+- [ ] If it sticks: name it, brand it, add it to event listings
+
+---
+
+## Movie Night — Tuesdays (Potential)
+
+### Concept
+A curated film screening night in the bar. Not a sports bar play — a *vibe* play. Think cult classics, foreign films, 80s genre movies, horror seasonally. The film is the DJ. Guests drink, watch, and don't have to talk.
+
+### Why It Works
+- Tuesdays need a reason to come in — this is a low-cost, high-atmosphere concept
+- Film creates a shared experience without requiring participation (unlike karaoke)
+- Easy to theme around the calendar: horror in October, romance in February, etc.
+- Shareable on social: a well-framed still of the bar with the film playing is strong content
+
+### Format
+- One film per night, screened on venue TVs (all screens, same content)
+- Sound: low-to-mid volume — guests should be able to talk at the bar
+- Optional themed cocktail tied to the film
+- Doors open at 7 or 8pm, film starts at a set time (listed on events)
+- Host a brief 30-second intro (film title, fun fact, drink pairing) before it starts
+
+### Programming Ideas
+- **Cult classics**: The Big Lebowski, Pulp Fiction, Clue, Labyrinth
+- **Disco era**: Saturday Night Fever, Thank God It's Friday, Car Wash
+- **Horror rotation** (seasonal): The Shining, Scream, Suspiria
+- **Chicago**: The Blues Brothers, Ferris Bueller's Day Off, High Fidelity
+- **Curveball**: foreign films, anime, silent films with a live DJ score (big swing)
+
+### To Do
+- [ ] Confirm AV setup supports full-room playback from a single source
+- [ ] Check licensing — bars need a public performance license to screen films (MPLC or Swank)
+- [ ] Build a programming calendar 4–6 weeks out
+- [ ] Design a simple weekly social graphic: film title, time, any themed drink
+
+---
 
 ### Ongoing To-Dos
 - [ ] Get hi-res Stardust logo for social graphics
