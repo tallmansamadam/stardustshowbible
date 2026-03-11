@@ -182,9 +182,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Search */}
-        <SearchBar notes={notes} posts={posts} onTabSwitch={setActiveTab} />
-
         {/* ── Tab bar (desktop) ── */}
         <div
           className="tabs-row hide-mobile"
@@ -300,72 +297,3 @@ function Stars() {
   )
 }
 
-function SearchBar({ notes, posts, onTabSwitch }) {
-  const [query, setQuery] = useState('')
-  const q = query.trim().toLowerCase()
-
-  const matchedNotes = q.length > 1
-    ? (notes || []).filter(n => n.title?.toLowerCase().includes(q) || n.content?.toLowerCase().includes(q))
-    : []
-  const matchedPosts = q.length > 1
-    ? (posts || []).filter(p => p.content?.toLowerCase().includes(q) || p.hashtags?.toLowerCase().includes(q))
-    : []
-
-  const hasResults = matchedNotes.length > 0 || matchedPosts.length > 0
-  const showResults = q.length > 1
-
-  return (
-    <div style={{ position: 'relative', marginBottom: 16 }}>
-      <input
-        type="text"
-        placeholder="Search notes and posts…"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        style={{
-          width: '100%', background: 'rgba(0,0,0,0.3)',
-          border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8,
-          padding: '9px 14px 9px 36px', color: colors.text,
-          fontSize: 13, fontFamily: fonts.body,
-        }}
-      />
-      <span style={{ position: 'absolute', left: 13, top: '50%', transform: 'translateY(-50%)', fontSize: 13, opacity: 0.3, pointerEvents: 'none' }}>⌕</span>
-      {query && (
-        <button onClick={() => setQuery('')} style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', color: colors.textFaint, fontSize: 14, padding: '0 4px' }}>×</button>
-      )}
-
-      {showResults && (
-        <div className="glass" style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 4, borderRadius: 10, zIndex: 50, maxHeight: 340, overflowY: 'auto', padding: '8px 0' }}>
-          {!hasResults && (
-            <div style={{ padding: '16px 18px', fontSize: 13, color: colors.textFaint, fontFamily: fonts.mono }}>No results</div>
-          )}
-          {matchedNotes.length > 0 && (
-            <>
-              <div style={{ padding: '6px 18px 4px', fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase' }}>Notes</div>
-              {matchedNotes.map(n => (
-                <div key={n.id} onClick={() => { onTabSwitch(0); setQuery('') }} style={{ padding: '10px 18px', cursor: 'pointer', borderBottom: '1px solid rgba(255,255,255,0.04)' }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.04)'}
-                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
-                  <div style={{ fontSize: 13, color: colors.text, fontFamily: fonts.body, marginBottom: 2 }}>{n.title}</div>
-                  <div style={{ fontSize: 11, color: colors.textFaint, fontFamily: fonts.mono }}>{n.tag}</div>
-                </div>
-              ))}
-            </>
-          )}
-          {matchedPosts.length > 0 && (
-            <>
-              <div style={{ padding: '6px 18px 4px', fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase' }}>Posts</div>
-              {matchedPosts.map(p => (
-                <div key={p.id} onClick={() => { onTabSwitch(1); setQuery('') }} style={{ padding: '10px 18px', cursor: 'pointer', borderBottom: '1px solid rgba(255,255,255,0.04)' }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.04)'}
-                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
-                  <div style={{ fontSize: 13, color: colors.text, fontFamily: fonts.body, marginBottom: 2 }}>{p.content?.slice(0, 80)}…</div>
-                  <div style={{ fontSize: 11, color: colors.textFaint, fontFamily: fonts.mono }}>{p.platform} · {p.status}</div>
-                </div>
-              ))}
-            </>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
