@@ -1,7 +1,7 @@
 -- ─────────────────────────────────────────────────────────────────────────────
--- Stardust Chicago — Best Mix Social Posts Seed
--- Date range: March 11 – April 10, 2026
--- Source: 36 posts scoring 3.0+ selected from batches 000, 010, 020
+-- Stardust Chicago — Social Posts Seed
+-- Date range: March 11 – May 10, 2026
+-- Source: Best mix from batches 000/010/020 (Mar 11–Apr 10) + full Batch 100 (Apr 11–May 10)
 -- Run in Supabase SQL Editor (Authentication → bypass RLS as service role)
 --
 -- BEFORE RUNNING: Replace 'YOUR_USER_ID_HERE' with your actual Supabase user ID.
@@ -655,5 +655,489 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 (uid, 'Twitter/X', 'Tweet', 'draft',
 'friday night at stardust. last karaoke night before electro swing arrives. 710 n clark, river north. open till 4am.',
 '', '', '2026-04-10');
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- BATCH 100 — Apr 11 – May 10, 2026 (karaoke-first, ES featured not centered)
+-- ════════════════════════════════════════════════════════════════════════════
+
+-- ── POST 66 · Instagram Story · Apr 11 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Saturday at Stardust.
+Open till 5am.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Packed Saturday crowd — room fully alive, lights up, energy at its peak. Bold text overlay. Countdown sticker to doors.',
+'2026-04-11');
+
+-- ── POST 67 · TikTok Video · Apr 11 ─────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'TikTok', 'Video', 'draft',
+'saturday night at stardust goes till 5am. 710 n clark, river north, chicago. karaoke all night.',
+'',
+'Raw Saturday footage — the room at full capacity, different voices, different songs, the crowd fully in it. Quick cuts. On-screen: "STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM"',
+'2026-04-11');
+
+-- ── POST 68 · Twitter/X Tweet · Apr 11 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'saturday night at stardust. 710 n clark, river north. doors at 8, open till 5am.',
+'', '', '2026-04-11');
+
+-- ── POST 69 · Facebook Event · Apr 11 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Karaoke Night — This Saturday at Stardust Chicago
+
+The kind of Saturday night that stretches all the way to 5am — and still feels too short. An extraordinary room full of songs you know, people you don''t, and one mic that belongs to whoever wants it next.
+
+Doors 8pm · Open till 5am · 710 N Clark St · River North
+Free to sing · No cover',
+'',
+'Recurring Saturday Facebook Event. Packed crowd photo as cover image — the room at its most alive.',
+'2026-04-11');
+
+-- ── POST 70 · Instagram Feed Post · Apr 13 ───────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Feed Post', 'draft',
+'✦',
+'#stardustchicago #stardust #chicago #rivernorth',
+'Electro Swing mood reveal — one image, no copy beyond the ornament. Something warm, slightly vintage, a detail that doesn''t belong to now. No genre, no date, no explanation. Let the image and comments do the work.',
+'2026-04-13');
+
+-- ── POST 71 · Twitter/X Tweet · Apr 14 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'april 25. stardust chicago. electro swing night.',
+'', '', '2026-04-14');
+
+-- ── POST 72 · Facebook Post · Apr 14 ────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Post', 'draft',
+'On Saturday, April 25, Stardust Chicago presents its first-ever Electro Swing Night — an extraordinary evening in River North where the jazz age meets the modern dancefloor.
+
+Think Caravan Palace. Think Parov Stelar. Think the energy of a 1920s speakeasy rebuilt for tonight, turned up loud, and open till 5am.
+
+One night. One sound. One room in River North you won''t forget.
+
+📍 710 N Clark St · River North · Doors 8pm · Open till 5am · No cover',
+'',
+'Art deco inspired graphic — warm amber tones, geometric shapes, a vintage-modern tension. Formal announcement; should feel like a proper reveal.',
+'2026-04-14');
+
+-- ── POST 73 · Instagram Story · Apr 16 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Thursday at Stardust.
+You already know what that means.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Warm, intimate Thursday atmosphere — bar shot, stage lit, the room settling in. Bold text. Countdown sticker.',
+'2026-04-16');
+
+-- ── POST 74 · Twitter/X Tweet · Apr 16 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'thursday karaoke at stardust. 710 n clark, river north. doors at 8.',
+'', '', '2026-04-16');
+
+-- ── POST 75 · Facebook Event · Apr 16 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Karaoke Night — This Thursday at Stardust Chicago
+
+River North''s best Thursday night continues. Pick any song. Take the mic. The room is ready for whatever you''ve been holding onto all week.
+
+Doors 8pm · Open till 4am · 710 N Clark St · River North
+Free to sing · No cover',
+'',
+'Recurring Thursday Facebook Event. Warm bar or performer photo as cover image.',
+'2026-04-16');
+
+-- ── POST 76 · Instagram Story · Apr 17 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Friday at Stardust.
+The weekend starts now.
+
+📍 710 N Clark · Doors 8pm · Open till 4am',
+'',
+'Story (9:16). Stage lit, mic in frame, the room just starting to fill. Bold text overlay. Countdown sticker to 8pm.',
+'2026-04-17');
+
+-- ── POST 77 · TikTok Video · Apr 17 ─────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'TikTok', 'Video', 'draft',
+'friday night karaoke at stardust chicago. 710 n clark, river north. open till 4am.',
+'',
+'The room coming alive on a Friday — first people arriving, coats off, first drinks, the energy building fast. Quick cuts. On-screen: "STARDUST CHICAGO · EVERY FRIDAY · TILL 4AM"',
+'2026-04-17');
+
+-- ── POST 78 · Twitter/X Tweet · Apr 17 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'friday night. stardust chicago. karaoke till 4am. 710 n clark, river north.',
+'', '', '2026-04-17');
+
+-- ── POST 79 · Instagram Story · Apr 18 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Saturday at Stardust.
+Open till 5am.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). High-energy Saturday crowd — packed and electric, the room at full tilt. Bold text. Countdown sticker.',
+'2026-04-18');
+
+-- ── POST 80 · TikTok Video · Apr 18 ─────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'TikTok', 'Video', 'draft',
+'stardust on a saturday is something you have to see in person. 710 n clark, river north, chicago. open till 5am.',
+'',
+'Best uncut Saturday footage — one continuous moment, raw audio, the room doing exactly what it does. The clip that makes someone feel like they missed something important. On-screen at the end: "STARDUST · EVERY SATURDAY · TILL 5AM"',
+'2026-04-18');
+
+-- ── POST 81 · Twitter/X Tweet · Apr 18 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'saturday night karaoke at stardust. 710 n clark, river north. doors at 8, open till 5am.',
+'', '', '2026-04-18');
+
+-- ── POST 82 · Facebook Event · Apr 18 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Karaoke Night — This Saturday at Stardust Chicago
+
+An incredible Saturday night in River North — the kind where you walk in planning to stay an hour and leave at 5am wondering where the time went. One mic, every song you know, and a room full of people who feel exactly the same way.
+
+Doors 8pm · Open till 5am · 710 N Clark St · River North
+Free to sing · No cover',
+'',
+'Recurring Saturday Facebook Event. Packed crowd photo — high energy, the room completely full.',
+'2026-04-18');
+
+-- ── POST 83 · Instagram Feed Post · Apr 20 ───────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Feed Post', 'draft',
+'The stage has been quiet since Saturday.
+
+Back Thursday.
+📍 710 N Clark · River North',
+'#stardustchicago #karaoke #chicagonightlife #rivernorth #weekendrecap #chicagobar #karaokelife #312',
+'Single strong image from the Apr 18 Saturday — crowd at peak energy or a performer mid-song. Portrait orientation. Let the weekend speak.',
+'2026-04-20');
+
+-- ── POST 84 · Twitter/X Tweet · Apr 20 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'big saturday at stardust. back thursday. 710 n clark, river north.',
+'', '', '2026-04-20');
+
+-- ── POST 85 · Instagram Story · Apr 23 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Thursday at Stardust.
+The mic is yours.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Pure karaoke — warm stage shot, mic in frame, intimate Thursday energy. Bold text. No Electro Swing mention.',
+'2026-04-23');
+
+-- ── POST 86 · Twitter/X Tweet · Apr 23 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'thursday karaoke at stardust. 710 n clark, river north. doors at 8, open till 4am.',
+'', '', '2026-04-23');
+
+-- ── POST 87 · Instagram Story · Apr 24 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Tonight: karaoke.
+Tomorrow: something different.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Friday night-of — stage lit, warm. The "tonight is great, and tomorrow is going to be something else" energy. Bold text. No full ES explanation.',
+'2026-04-24');
+
+-- ── POST 88 · Twitter/X Tweet · Apr 24 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'tomorrow night. electro swing at stardust. 710 n clark, river north. doors at 8.',
+'', '', '2026-04-24');
+
+-- ── POST 89 · Facebook Post · Apr 24 ────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Post', 'draft',
+'Tomorrow night at Stardust Chicago — Electro Swing Night.
+
+April 25. Caravan Palace. Parov Stelar. The jazz age meets the modern dancefloor in River North, open till 5am.
+
+Doors 8pm · 710 N Clark St · River North · No cover',
+'',
+'Best art deco graphic from the Electro Swing campaign — warm amber, sharp geometry. Short, direct final call.',
+'2026-04-24');
+
+-- ── POST 90 · Instagram Story · Apr 25 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Tonight. Electro Swing Night.
+
+📍 710 N Clark · Doors 8pm · Open till 5am',
+'',
+'Story (9:16). Bold text over a warm, electric image — the room already alive. Countdown sticker to 8pm.',
+'2026-04-25');
+
+-- ── POST 91 · TikTok Video · Apr 25 ─────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'TikTok', 'Video', 'draft',
+'electro swing night at stardust chicago. tonight. 710 n clark, river north. doors at 8.',
+'',
+'Open cold on audio — Caravan Palace or Parov Stelar, no intro. Show the room being set up: lights, bar, details. Quick cuts. On-screen: "TONIGHT · ELECTRO SWING NIGHT · STARDUST CHICAGO · 710 N CLARK"',
+'2026-04-25');
+
+-- ── POST 92 · Facebook Event · Apr 25 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Electro Swing Night — Saturday, April 25 at Stardust Chicago
+
+The night has arrived. Stardust Chicago presents its first-ever Electro Swing Night — an extraordinary evening where the energy of the 1920s meets the modern dancefloor in the heart of River North.
+
+Think Caravan Palace. Think Parov Stelar. Think the most electric Saturday night of the spring.
+
+Doors 8pm · Open till 5am · 710 N Clark St · River North
+No cover · 21+',
+'',
+'Electro Swing Night Facebook Event. Best art deco graphic as cover image — warm, geometric, electric. This is the main event page.',
+'2026-04-25');
+
+-- ── POST 93 · Instagram Feed Post · Apr 27 ───────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Feed Post', 'draft',
+'Saturday was extraordinary.
+
+Thank you, River North.
+📍 710 N Clark',
+'#stardustchicago #electroswing #chicago #rivernorth #chicagonightlife #saturday',
+'Best single image from Electro Swing Night — the room at peak energy. Portrait orientation. Warm and complete. One post, then we move on.',
+'2026-04-27');
+
+-- ── POST 94 · Twitter/X Tweet · Apr 27 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'electro swing night at stardust was something else. back to karaoke thursday.',
+'', '', '2026-04-27');
+
+-- ── POST 95 · Instagram Story · Apr 30 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Thursday at Stardust.
+The stage is live.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Back to karaoke — warm, intimate Thursday energy. Bold text. Countdown sticker. No Electro Swing reference.',
+'2026-04-30');
+
+-- ── POST 96 · Twitter/X Tweet · Apr 30 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'thursday karaoke at stardust. 710 n clark, river north. doors at 8, open till 4am.',
+'', '', '2026-04-30');
+
+-- ── POST 97 · Facebook Event · Apr 30 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Karaoke Night — This Thursday at Stardust Chicago
+
+Thursday is back at Stardust Chicago. Pick any song. Take the mic. The room fills up fast on Thursdays — and it always delivers.
+
+Doors 8pm · Open till 4am · 710 N Clark St · River North
+Free to sing · No cover',
+'',
+'Recurring Thursday Facebook Event. Warm bar photo — the room in its karaoke element.',
+'2026-04-30');
+
+-- ── POST 98 · Instagram Story · May 1 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'First Friday of May.
+Stardust. 8pm.
+
+📍 710 N Clark · Open till 4am',
+'',
+'Story (9:16). Stage lit, mic in frame — the milestone of the month''s first Friday. Bold text. Countdown sticker.',
+'2026-05-01');
+
+-- ── POST 99 · TikTok Video · May 1 ──────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'TikTok', 'Video', 'draft',
+'first friday of may at stardust chicago. 710 n clark, river north. karaoke till 4am.',
+'',
+'The room coming alive on the first Friday of May — fresh energy, people arriving ready for the month ahead. Quick cuts, real footage. On-screen: "STARDUST CHICAGO · FIRST FRIDAY OF MAY · TILL 4AM"',
+'2026-05-01');
+
+-- ── POST 100 · Twitter/X Tweet · May 1 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'first friday of may at stardust. 710 n clark, river north. doors at 8, open till 4am.',
+'', '', '2026-05-01');
+
+-- ── POST 101 · Instagram Story · May 2 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'First Saturday of May.
+Open till 5am.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Packed and electric Saturday crowd — first of the month energy. Bold text overlay.',
+'2026-05-02');
+
+-- ── POST 102 · Facebook Event · May 2 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Karaoke Night — First Saturday of May at Stardust Chicago
+
+The first Saturday of May arrives at Stardust Chicago. Late night karaoke in River North — the kind of room that takes care of you till 5am. Come for the song, stay for the night.
+
+Doors 8pm · Open till 5am · 710 N Clark St · River North
+Free to sing · No cover',
+'',
+'Recurring Saturday Facebook Event. High-energy crowd photo as cover image. Fresh May framing.',
+'2026-05-02');
+
+-- ── POST 103 · Instagram Feed Post · May 4 ───────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Feed Post', 'draft',
+'Someone sang something last Saturday the room didn''t forget.
+
+Back Thursday.
+📍 710 N Clark · River North',
+'#stardustchicago #karaoke #chicagonightlife #rivernorth #weekendrecap #chicagobar #karaokelife #312',
+'Best image from the May 1–2 weekend — crowd or performer, a moment that carries weight. Portrait orientation.',
+'2026-05-04');
+
+-- ── POST 104 · Twitter/X Tweet · May 4 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'the room was packed all weekend. back thursday. stardust chicago, 710 n clark.',
+'', '', '2026-05-04');
+
+-- ── POST 105 · Instagram Story · May 7 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Thursday at Stardust.
+You already know.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Warm Thursday bar atmosphere — intimate, familiar, the room that knows itself. Bold text. Countdown sticker.',
+'2026-05-07');
+
+-- ── POST 106 · Facebook Event · May 7 ───────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Facebook', 'Event', 'draft',
+'Karaoke Night — This Thursday at Stardust Chicago
+
+River North''s most reliable Thursday night. The mic is out, the room is warm, and whatever song has been living in your head all week — tonight is the night.
+
+Doors 8pm · Open till 4am · 710 N Clark St · River North
+Free to sing · No cover',
+'',
+'Recurring Thursday Facebook Event. Intimate Thursday bar photo as cover image.',
+'2026-05-07');
+
+-- ── POST 107 · Instagram Story · May 8 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Friday at Stardust.
+Doors 8pm. Till 4am.
+
+📍 710 N Clark',
+'',
+'Story (9:16). The quiet confidence of a regular Friday — stage shot, warm light, mic waiting. Bold text. Countdown sticker.',
+'2026-05-08');
+
+-- ── POST 108 · Twitter/X Tweet · May 8 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'friday karaoke at stardust. 710 n clark, river north. doors at 8.',
+'', '', '2026-05-08');
+
+-- ── POST 109 · Instagram Story · May 9 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Instagram', 'Story', 'draft',
+'Saturday at Stardust.
+The stage goes till 5am.
+
+📍 710 N Clark · Doors 8pm',
+'',
+'Story (9:16). Saturday late-night energy — bold text, the room fully alive, the night still ahead. Countdown sticker.',
+'2026-05-09');
+
+-- ── POST 110 · TikTok Video · May 9 ─────────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'TikTok', 'Video', 'draft',
+'saturday karaoke at stardust hits different when you stay till 5am. 710 n clark, river north, chicago.',
+'',
+'Late Saturday footage — the room deep into the night, past midnight, voices still strong. The "we stayed and it was worth it" feeling. On-screen: "STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM"',
+'2026-05-09');
+
+-- ── POST 111 · Twitter/X Tweet · May 9 ──────────────────────────────────────
+
+INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, date) VALUES
+(uid, 'Twitter/X', 'Tweet', 'draft',
+'saturday karaoke at stardust. 710 n clark, river north. doors at 8, open till 5am.',
+'', '', '2026-05-09');
 
 END $$;
