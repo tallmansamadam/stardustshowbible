@@ -249,6 +249,30 @@ Use a mix of tiers on every post. Don't use all of them — pick 10–15 that fi
 
 ---
 
+## Visual Content — On-Screen Text
+
+This applies to all visual formats: Instagram Stories, Reels, TikTok videos, and any post with text overlaid on the image or video.
+
+**On-screen captions (overlaid text) must be 3 words or fewer per line.**
+
+This is not a suggestion. Long overlaid text kills readability on a phone screen and dilutes the visual impact of the image behind it. If you need more than 3 words, you don't need on-screen text — you need a written caption below the post.
+
+**Good:**
+- "STARDUST CHICAGO"
+- "Every Thursday."
+- "Tonight. 8pm."
+- "The mic's live."
+
+**Bad:**
+- "Karaoke every Thursday Friday and Saturday at Stardust Chicago"
+- "Come sing your favorite songs at 710 N Clark"
+
+Multi-line on-screen text is fine — stack short lines rather than writing one long line. Each line stays at 3 words max.
+
+The written caption below the post (description field) has no word limit — that's where context, hashtags, and logistics live. Don't conflate the two.
+
+---
+
 ## Instagram
 
 **Tips**
