@@ -249,9 +249,23 @@ Use a mix of tiers on every post. Don't use all of them — pick 10–15 that fi
 
 ---
 
-## Visual Content — On-Screen Text
+## Visual Content
 
 This applies to all visual formats: Instagram Stories, Reels, TikTok videos, and any post with text overlaid on the image or video.
+
+### Frame Rate — Shoot at 24fps
+
+All video content should be shot and exported at 24fps.
+
+24fps is the cinematic standard — it's the frame rate of every film you've seen in a theater, and the reason professional video looks the way it does. Footage shot at 24fps has a natural motion blur and a slightly organic quality that reads as intentional and polished. Higher frame rates (60fps, 120fps) look hyper-real and clinical — fine for sports broadcasts, wrong for a warm late-night bar. Phone cameras default to 30fps or 60fps; change it before you shoot.
+
+The practical effect is subtle but cumulative: a month of 24fps content builds a visual identity that feels considered. A mix of frame rates looks like nobody was in charge.
+
+**How to set it:** on iPhone, Settings → Camera → Record Video → 1080p at 24fps (or 4K at 24fps if storage allows). On Android, open the camera app → Video settings → Frame rate → 24fps.
+
+Slow-motion clips are the exception — shoot those at 120fps or 240fps and interpret them at 24fps in editing.
+
+### On-Screen Text
 
 **On-screen captions (overlaid text) should aim for 3 words or fewer per line.**
 
