@@ -1,6 +1,13 @@
 export const DEFAULT_CONTENT = {
   showbible: `## The Show Bible — Stardust Chicago
 
+## To Do
+- [ ] Finalize tagline
+- [ ] Design press kit one-pager PDF
+- [ ] Add press contact info
+
+---
+
 ### What This Is
 The Show Bible is the master reference for how Stardust looks, sounds, feels, and speaks. Anyone running a night — host, DJ, staff — should know this cold.
 
@@ -287,47 +294,24 @@ The written caption below the post (description field) has no word limit — tha
 
 ---
 
-### Video Production Glossary
+### Color Grading — Order of Operations
 
-A reference for crew. These are the terms you'll hear when reviewing footage, giving direction, or reading the style guide.
+This is the recommended signal chain for color grading footage in DaVinci Resolve (or any NLE). The order of operations is not the same as the order in which you work — see the note below.
 
-**A-roll** — The primary footage. The performer singing, the crowd reacting, the bartender pouring. The main thing you went to shoot.
+**Signal chain (left to right):**
 
-**Ambient audio** — The natural sound of the room: crowd noise, music, laughter. Don't record over it with music from your phone. The room's real sound is almost always better.
+1. **Noise reduction** — Goes first. Noise reduction needs a clean, unaltered signal to work correctly. Apply it before any exposure or contrast changes.
+2. **Exposure and contrast** — Shape the light in the scene. Lift shadows, pull highlights, set the overall tonal range.
+3. **Balance adjustment** — White balance and overall mood. Get neutrals neutral before adding any creative color.
+4. **Secondary adjustments** — Targeted corrections like skin tones, selective hue shifts, masking.
+5. **Look** — Your creative grade or LUT. Applied after all technical corrections are locked.
+6. **Color space transformation** — Convert to your deliverable (Rec. 709 with a gamma of 2.4, or whatever the platform requires). This goes last in the chain.
 
-**Aspect ratio** — The proportional dimensions of the frame. 9:16 is vertical (Stories, TikTok, Reels). 16:9 is horizontal (widescreen). Shoot vertical for anything going to social.
+Steps 1–4 happen at the **clip level**. Steps 5–6 happen at the **timeline level** — in DaVinci Resolve this is the node tree above the clips; in Premiere Pro or Final Cut Pro, use an adjustment layer on top of the entire timeline.
 
-**B-roll** — Supplemental footage that cuts away from the main subject: the bar top, the mic stand, hands on a glass, the crowd from a wide angle. Gives editors options and makes sequences feel complete.
+**Order of operations ≠ order in which you work.** In practice, apply your LUT or color space transformation first so you have a viewable image to judge. Then make your clip-level corrections. The corrections will still be placed before the LUT in the signal chain — that's just how the node tree works. Nobody can judge a log image, so get your color management in place before dialing in anything else.
 
-**Bokeh** — The soft blurring of the background when the subject is in sharp focus. Happens naturally with portrait mode or when shooting close to a subject in low light. Flattering for people, good for atmosphere.
-
-**Color grade** — Adjusting the tone, warmth, and contrast of footage after shooting. Warm grades (more amber, less blue) suit Stardust's atmosphere. Don't over-filter — subtle is better.
-
-**Coverage** — The range of shots you capture of the same moment: wide, medium, close-up. More coverage gives the editor choices. One angle of everything is the minimum; two or three is professional.
-
-**Depth of field** — How much of the frame is in focus front to back. Shallow depth of field = only the subject is sharp, background is soft. Deep depth of field = everything is sharp. Shallow reads as more cinematic.
-
-**Export** — Rendering the finished edit into a video file. Always export at the resolution you shot (don't upscale). For social: H.264 or H.265, highest quality setting your platform allows.
-
-**fps (frames per second)** — How many still images make up one second of video. See *Frame Rate* section above.
-
-**Gimbal** — A motorized handheld stabilizer that keeps the camera level and smooth while you move. Makes handheld footage look intentional rather than shaky. Worth using for any moving shot.
-
-**Hook** — The first one to three seconds of a video. The algorithm and the viewer both make a keep/skip decision immediately. Open on something happening — mid-action, mid-lyric, mid-reaction — never a slow pan of an empty room.
-
-**ISO** — The camera sensor's sensitivity to light. Higher ISO = brighter image in dark environments, but also more grain (noise). On a phone in a dark bar, ISO will climb automatically. Acceptable up to a point; if it looks grainy, get the camera physically closer to a light source rather than boosting ISO further.
-
-**Jump cut** — An edit between two clips of the same subject that creates a visible skip in time or position. Used intentionally in fast-paced edits; jarring if accidental. Avoid unless it's deliberate.
-
-**Natural light** — Light that exists in the environment: stage wash, bar lighting, practical lamps. Shooting by natural/practical light at Stardust almost always looks better than using a phone flash. Flash flattens faces and kills atmosphere.
-
-**Resolution** — The pixel dimensions of the video frame. 1080p (1920×1080) is the standard minimum for social. 4K (3840×2160) gives more cropping flexibility in the edit. Shoot the highest resolution your phone supports.
-
-**Shutter speed** — How long the sensor is exposed for each frame. The standard rule: set shutter speed to double the frame rate (24fps → 1/50s). This produces natural motion blur. A shutter speed that's too high (1/500s at 24fps) makes motion look unnaturally sharp and stroby.
-
-**Slow motion** — Footage shot at a high frame rate (120fps or 240fps) and played back at a lower one (24fps), stretching time. Use it for a crowd reaction, a big moment, confetti, anything that benefits from emphasis. Shoot slo-mo clips separately — don't shoot your whole night at 120fps.
-
-**White balance** — The color temperature setting that makes neutral colors (whites, grays) look correct under different light sources. Bars have warm tungsten light; if white balance is set wrong, everything looks orange or blue. On a phone, lock white balance manually if the auto setting keeps shifting.
+**DaVinci Wide Gamut workflow (optional).** One exception to the above: you can open the signal chain with a color space transform from your recording color space (e.g. Sony S-Gamut3.Cine/S-Log3) into DaVinci Wide Gamut / DaVinci Intermediate, do all your adjustments in the middle, then close with a transform out to Rec. 709. Because DaVinci Wide Gamut is a larger color space than your source, nothing gets clipped — overexposed footage has room to recover. This is the only situation where a color space transform intentionally goes at the beginning of the chain.
 
 ---
 
@@ -518,10 +502,47 @@ If something goes wrong on stage, the room takes its cue from you. Laugh it off,
 - Tag @stardustchicago. Use the hashtag bank (Show Bible → Social Media).
 - Don't post anything unflattering of patrons without consent.
 
-## To Do
-- [ ] Finalize tagline
-- [ ] Design press kit one-pager PDF
-- [ ] Add press contact info`,
+### Video Production Glossary
+
+A reference for crew. These are the terms you'll hear when reviewing footage, giving direction, or reading the style guide.
+
+**A-roll** — The primary footage. The performer singing, the crowd reacting, the bartender pouring. The main thing you went to shoot.
+
+**Ambient audio** — The natural sound of the room: crowd noise, music, laughter. Don't record over it with music from your phone. The room's real sound is almost always better.
+
+**Aspect ratio** — The proportional dimensions of the frame. 9:16 is vertical (Stories, TikTok, Reels). 16:9 is horizontal (widescreen). Shoot vertical for anything going to social.
+
+**B-roll** — Supplemental footage that cuts away from the main subject: the bar top, the mic stand, hands on a glass, the crowd from a wide angle. Gives editors options and makes sequences feel complete.
+
+**Bokeh** — The soft blurring of the background when the subject is in sharp focus. Happens naturally with portrait mode or when shooting close to a subject in low light. Flattering for people, good for atmosphere.
+
+**Color grade** — Adjusting the tone, warmth, and contrast of footage after shooting. Warm grades (more amber, less blue) suit Stardust's atmosphere. Don't over-filter — subtle is better.
+
+**Coverage** — The range of shots you capture of the same moment: wide, medium, close-up. More coverage gives the editor choices. One angle of everything is the minimum; two or three is professional.
+
+**Depth of field** — How much of the frame is in focus front to back. Shallow depth of field = only the subject is sharp, background is soft. Deep depth of field = everything is sharp. Shallow reads as more cinematic.
+
+**Export** — Rendering the finished edit into a video file. Always export at the resolution you shot (don't upscale). For social: H.264 or H.265, highest quality setting your platform allows.
+
+**fps (frames per second)** — How many still images make up one second of video. See *Frame Rate* section above.
+
+**Gimbal** — A motorized handheld stabilizer that keeps the camera level and smooth while you move. Makes handheld footage look intentional rather than shaky. Worth using for any moving shot.
+
+**Hook** — The first one to three seconds of a video. The algorithm and the viewer both make a keep/skip decision immediately. Open on something happening — mid-action, mid-lyric, mid-reaction — never a slow pan of an empty room.
+
+**ISO** — The camera sensor's sensitivity to light. Higher ISO = brighter image in dark environments, but also more grain (noise). On a phone in a dark bar, ISO will climb automatically. Acceptable up to a point; if it looks grainy, get the camera physically closer to a light source rather than boosting ISO further.
+
+**Jump cut** — An edit between two clips of the same subject that creates a visible skip in time or position. Used intentionally in fast-paced edits; jarring if accidental. Avoid unless it's deliberate.
+
+**Natural light** — Light that exists in the environment: stage wash, bar lighting, practical lamps. Shooting by natural/practical light at Stardust almost always looks better than using a phone flash. Flash flattens faces and kills atmosphere.
+
+**Resolution** — The pixel dimensions of the video frame. 1080p (1920×1080) is the standard minimum for social. 4K (3840×2160) gives more cropping flexibility in the edit. Shoot the highest resolution your phone supports.
+
+**Shutter speed** — How long the sensor is exposed for each frame. The standard rule: set shutter speed to double the frame rate (24fps → 1/50s). This produces natural motion blur. A shutter speed that's too high (1/500s at 24fps) makes motion look unnaturally sharp and stroby.
+
+**Slow motion** — Footage shot at a high frame rate (120fps or 240fps) and played back at a lower one (24fps), stretching time. Use it for a crowd reaction, a big moment, confetti, anything that benefits from emphasis. Shoot slo-mo clips separately — don't shoot your whole night at 120fps.
+
+**White balance** — The color temperature setting that makes neutral colors (whites, grays) look correct under different light sources. Bars have warm tungsten light; if white balance is set wrong, everything looks orange or blue. On a phone, lock white balance manually if the auto setting keeps shifting.`,
 
   karaoke: `## Karaoke Host Notes
 
