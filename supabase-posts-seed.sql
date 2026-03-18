@@ -43,7 +43,7 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 'thursday karaoke at stardust hits different. 710 n clark, river north, chicago. doors at 8.',
 '',
 'Thursday energy — the room warming up, regulars and newcomers. Quick cuts, raw footage. On-screen: "STARDUST · EVERY THURSDAY"',
-'Script: "thursday karaoke at stardust hits different."
+'Script: "thursday karaoke at stardust just hits different."
 
 0:00 · 2s — Wide room, lights warming up, night just starting
 0:02 · 2s — From back of crowd toward stage — first singer, room half-full
@@ -401,7 +401,7 @@ Coming soon to Stardust Chicago.
 0:00 · 3s — Cold open: Caravan Palace audio, no title card. Art deco image, warm amber.
 0:03 · 2s — A vintage detail — 1920s texture, something out of time
 0:05 · 2s — On-screen: "imagine jazz."
-0:07 · 2s — On-screen: "but it makes you dance."
+0:07 · 2s — On-screen: "but it grooves like house."
 0:09 · 2s — Wider art deco image — the full aesthetic
 0:11 · 2s — On-screen: "electro swing"
 0:13 · 4s — End card: COMING SOON · STARDUST CHICAGO · 710 N CLARK
@@ -420,7 +420,7 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 
 0:00 · 3s — Cold open: Caravan Palace audio hits first. No title. Just the music.
 0:03 · 2s — On-screen: "imagine jazz."
-0:05 · 2s — On-screen: "but it makes you want to dance."
+0:05 · 2s — On-screen: "but it grooves like house."
 0:07 · 3s — Art deco visual — warm amber, sharp geometry, the Stardust aesthetic
 0:10 · 2s — On-screen: "electro swing is coming to stardust chicago."
 0:12 · 4s — End card: STARDUST CHICAGO (logo)
