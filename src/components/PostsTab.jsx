@@ -428,8 +428,12 @@ export default function PostsTab({ posts, canEdit, onAdd, onUpdate, onDelete }) 
 }
 
 // ── Post Card ─────────────────────────────────────────────────────────────────
+const VIDEO_TYPES = ['Video', 'Reel', 'Stitch']
+
 function PostCard({ post, canEdit, editing, confirming, isDragging, onEdit, onCancelEdit, onSave, onConfirmDelete, onCancelDelete, onDelete, onDragStart, onDragEnd }) {
   const cfg = PLATFORMS[post.platform] || {}
+  const [scriptOpen, setScriptOpen] = useState(false)
+  const isVideoType = VIDEO_TYPES.includes(post.post_type)
 
   if (editing) {
     return (
@@ -534,6 +538,28 @@ function PostCard({ post, canEdit, editing, confirming, isDragging, onEdit, onCa
             {cfg.hasHashtags && post.hashtags && ` · ${countHashtags(post.hashtags)} tags${cfg.hashtagLimit ? ` / ${cfg.hashtagLimit}` : ''}`}
           </div>
         )}
+
+        {/* Video script toggle */}
+        {isVideoType && (
+          <div style={{ marginTop: 8, borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 7 }}>
+            <button
+              onClick={() => setScriptOpen(o => !o)}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', gap: 5, color: colors.textFaint, fontSize: 10, fontFamily: fonts.mono, letterSpacing: '0.5px' }}
+            >
+              <span style={{ fontSize: 8, opacity: 0.7, transition: 'transform 0.15s', display: 'inline-block', transform: scriptOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>▶</span>
+              VIDEO SCRIPT
+              {post.video_script && !scriptOpen && <span style={{ color: colors.gold, fontSize: 8, marginLeft: 2 }}>●</span>}
+            </button>
+            {scriptOpen && (
+              <div style={{ marginTop: 8, padding: '10px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 6, border: '1px solid rgba(255,255,255,0.06)' }}>
+                {post.video_script
+                  ? <pre style={{ margin: 0, fontSize: 11, color: colors.textMuted, fontFamily: fonts.mono, whiteSpace: 'pre-wrap', lineHeight: 1.7 }}>{post.video_script}</pre>
+                  : <span style={{ fontSize: 11, color: colors.textFaint, fontFamily: fonts.mono, fontStyle: 'italic' }}>No script yet — edit post to add one.</span>
+                }
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -543,7 +569,7 @@ function PostCard({ post, canEdit, editing, confirming, isDragging, onEdit, onCa
 function PostForm({ initial, onSave, onCancel }) {
   const [form, setForm] = useState(initial || {
     platform: 'Instagram', post_type: 'Feed Post', status: 'idea',
-    content: '', hashtags: '', media_notes: '', date: '',
+    content: '', hashtags: '', media_notes: '', video_script: '', date: '',
   })
   const [saving, setSaving] = useState(false)
 
@@ -624,12 +650,25 @@ function PostForm({ initial, onSave, onCancel }) {
       )}
 
       {cfg.hasMediaNotes && (
-        <div style={{ marginBottom: 18 }}>
+        <div style={{ marginBottom: 12 }}>
           <label style={labelSt}>Visual / Media Notes</label>
           <input
             placeholder="Describe the photo, video, or graphic needed…" value={form.media_notes}
             onChange={e => set('media_notes', e.target.value)}
             style={{ ...inputSt, marginTop: 6 }}
+          />
+        </div>
+      )}
+
+      {VIDEO_TYPES.includes(form.post_type) && (
+        <div style={{ marginBottom: 18 }}>
+          <label style={labelSt}>Video Script</label>
+          <textarea
+            rows={6}
+            placeholder={'Script copy, spoken lines, cut sequence…\n\nExample:\n"saturday night at stardust. open till 5am."\n\n0:00 · 3s — Wide room, lights up, full energy\n0:03 · 3s — Singer at mic, crowd behind them\n0:06 · 4s — End card: STARDUST · EVERY SATURDAY · TILL 5AM'}
+            value={form.video_script}
+            onChange={e => set('video_script', e.target.value)}
+            style={{ ...inputSt, marginTop: 6, resize: 'vertical', lineHeight: 1.7, fontFamily: fonts.mono, fontSize: 11 }}
           />
         </div>
       )}
