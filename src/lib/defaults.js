@@ -183,6 +183,13 @@ Stardust Chicago is a bar and live entertainment venue in River North bringing k
 - [ ] Eater Chicago — neighborhood bar roundups
 - [ ] Local influencer / nightlife blogger outreach
 
+### To Do
+- [ ] Finalize tagline
+- [ ] Write final 2–3 sentence about blurb
+- [ ] Design one-pager (use Show Bible visual identity)
+- [ ] Export as PDF and add to shared Google Drive
+- [ ] Add press contact info
+
 ---
 
 ## Social Media & Posting
@@ -707,6 +714,12 @@ A low-key Monday night for hospitality workers, creatives, and industry folks �
 - Industry discount on drinks (or a signature cheap shot — keeps it accessible)
 - Keep it small and intimate; if it outgrows the room, that's a good problem
 
+### To Do
+- [ ] Confirm management buy-in on Monday programming
+- [ ] Identify a DJ or resident who fits the vibe
+- [ ] Test run: soft launch one Monday with no marketing, word-of-mouth only
+- [ ] If it sticks: name it, brand it, add it to event listings
+
 ---
 
 ## Movie Night — Tuesdays (Potential)
@@ -750,7 +763,22 @@ Bars screening films publicly need a public performance license — this is sepa
 
 Since you're not charging for the film and it's bar entertainment, MPLC is the clean, correct fit. Combined cost of MPLC + Swank if needed is usually still under $1,000/year.
 
-`,
+### To Do
+- [ ] Confirm AV setup supports full-room playback from a single source
+- [ ] Get MPLC quote at mplc.com (expect $200–$500/year for this venue size)
+- [ ] If a title isn't covered by MPLC, check Swank at swankmp.net
+- [ ] Build a programming calendar 4–6 weeks out
+- [ ] Design a simple weekly social graphic: film title, time, any themed drink
+
+---
+
+### Ongoing To-Dos
+- [ ] Get hi-res Stardust logo for social graphics
+- [ ] Set up Linktree or link-in-bio for Instagram
+- [ ] Create shared Google Drive for promo assets
+- [ ] Build email list sign-up at venue (tablet at bar)
+- [ ] Draft press release for Electro Swing launch
+- [ ] Submit to Do312 and Chicago Reader event listings`,
 
   sound: `## Sound & Tech Setup
 
