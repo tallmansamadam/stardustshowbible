@@ -60,6 +60,21 @@ function countHashtags(str) {
   return (str?.match(/#\S+/g) || []).length
 }
 
+function formatTime(t) {
+  if (!t) return ''
+  const [h, m] = t.split(':').map(Number)
+  const ampm = h >= 12 ? 'PM' : 'AM'
+  const h12 = h % 12 || 12
+  return `${h12}:${String(m).padStart(2, '0')} ${ampm}`
+}
+
+function suggestedTime(platform) {
+  if (platform === 'TikTok')    return '10:00'
+  if (platform === 'Facebook')  return '13:00'
+  if (platform === 'Twitter/X') return '08:00'
+  return '11:00' // Instagram default
+}
+
 function getWeekDays(weekOffset) {
   const today = new Date()
   const dow = today.getDay()
@@ -104,6 +119,32 @@ export default function PostsTab({ posts, canEdit, onAdd, onUpdate, onDelete }) 
   }
 
   const today = new Date().toISOString().slice(0, 10)
+
+  // Stale posts — past date, still draft or idea
+  const stalePosts = (posts || []).filter(p =>
+    p.date && p.date < today && (p.status === 'draft' || p.status === 'idea')
+  )
+  const timeToMins = t => { if (!t) return -1; const [h, m] = t.split(':').map(Number); return h * 60 + (m || 0) }
+  const recycleStale = async () => {
+    const allPosts = posts || []
+    for (const post of stalePosts) {
+      const dayOfWeek = new Date(post.date + 'T12:00:00').getDay()
+      let next = new Date(today + 'T12:00:00')
+      next.setDate(next.getDate() + 1)
+      while (next.getDay() !== dayOfWeek) next.setDate(next.getDate() + 1)
+      for (let i = 0; i < 52; i++) {
+        const ds = next.toISOString().slice(0, 10)
+        const conflicts = allPosts.filter(p2 =>
+          p2.id !== post.id && p2.date === ds && p2.platform === post.platform &&
+          (!post.post_time || !p2.post_time || Math.abs(timeToMins(post.post_time) - timeToMins(p2.post_time)) < 60)
+        )
+        if (conflicts.length < 2) break
+        next.setDate(next.getDate() + 7)
+      }
+      await onUpdate({ ...post, date: next.toISOString().slice(0, 10) })
+    }
+  }
+
   const weekDays = getWeekDays(weekOffset)
   const weekDayStrs = weekDays.map(d => d.toISOString().slice(0, 10))
 
@@ -145,18 +186,33 @@ export default function PostsTab({ posts, canEdit, onAdd, onUpdate, onDelete }) 
         <h2 style={{ margin: 0, fontSize: 24, fontWeight: 300, color: colors.gold, fontFamily: fonts.display, letterSpacing: 1 }}>
           Social Posts
         </h2>
-        {canEdit && !creating && (
-          <button
-            onClick={() => setCreating(true)}
-            style={{
-              background: 'rgba(212,168,74,0.08)', border: '1px solid rgba(212,168,74,0.22)',
-              color: colors.gold, borderRadius: 8, padding: '7px 16px',
-              fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
-            }}
-          >
-            + New Post
-          </button>
-        )}
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+          {canEdit && stalePosts.length > 0 && (
+            <button
+              onClick={recycleStale}
+              title="Reschedule stale draft/idea posts to the next available same-weekday"
+              style={{
+                background: 'rgba(224,168,74,0.06)', border: '1px solid rgba(224,168,74,0.18)',
+                color: '#e0a84a', borderRadius: 8, padding: '7px 14px',
+                fontSize: 11, fontFamily: fonts.mono, letterSpacing: '0.5px',
+              }}
+            >
+              ↺ {stalePosts.length} stale
+            </button>
+          )}
+          {canEdit && !creating && (
+            <button
+              onClick={() => setCreating(true)}
+              style={{
+                background: 'rgba(212,168,74,0.08)', border: '1px solid rgba(212,168,74,0.22)',
+                color: colors.gold, borderRadius: 8, padding: '7px 16px',
+                fontSize: 12, fontFamily: fonts.mono, letterSpacing: '1px',
+              }}
+            >
+              + New Post
+            </button>
+          )}
+        </div>
       </div>
 
       {/* ── Week strip ── */}
@@ -490,6 +546,11 @@ function PostCard({ post, canEdit, editing, confirming, isDragging, onEdit, onCa
             }}>
               {post.status}
             </span>
+            {post.post_time && (
+              <span style={{ fontSize: 10, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '0.3px' }}>
+                {formatTime(post.post_time)}
+              </span>
+            )}
           </div>
 
           {canEdit && (
@@ -569,7 +630,7 @@ function PostCard({ post, canEdit, editing, confirming, isDragging, onEdit, onCa
 function PostForm({ initial, onSave, onCancel }) {
   const [form, setForm] = useState(initial || {
     platform: 'Instagram', post_type: 'Feed Post', status: 'idea',
-    content: '', hashtags: '', media_notes: '', video_script: '', date: '',
+    content: '', hashtags: '', media_notes: '', video_script: '', date: '', post_time: '',
   })
   const [saving, setSaving] = useState(false)
 
@@ -581,7 +642,10 @@ function PostForm({ initial, onSave, onCancel }) {
   const canSave = form.content?.trim() && !overLimit && !overHashtagLimit
 
   const set = (key, val) => setForm(f => ({ ...f, [key]: val }))
-  const setPlatform = p => setForm(f => ({ ...f, platform: p, post_type: PLATFORMS[p]?.postTypes[0] || '' }))
+  const setPlatform = p => setForm(f => ({
+    ...f, platform: p, post_type: PLATFORMS[p]?.postTypes[0] || '',
+    post_time: f.post_time || suggestedTime(p),
+  }))
 
   const handle = async () => {
     if (!canSave) return
@@ -592,7 +656,7 @@ function PostForm({ initial, onSave, onCancel }) {
 
   return (
     <div>
-      <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 10, marginBottom: 14 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 10, marginBottom: 14 }}>
         <div>
           <label style={labelSt}>Platform</label>
           <select value={form.platform} onChange={e => setPlatform(e.target.value)} style={inputSt}>
@@ -614,6 +678,15 @@ function PostForm({ initial, onSave, onCancel }) {
         <div>
           <label style={labelSt}>Date</label>
           <input type="date" value={form.date} onChange={e => set('date', e.target.value)} style={inputSt} />
+        </div>
+        <div>
+          <label style={labelSt}>Time</label>
+          <input
+            type="time" value={form.post_time}
+            onChange={e => set('post_time', e.target.value)}
+            placeholder={suggestedTime(form.platform)}
+            style={inputSt}
+          />
         </div>
       </div>
 
