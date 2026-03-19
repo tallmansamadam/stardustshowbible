@@ -21,47 +21,47 @@ BEGIN
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'summer is here. stardust chicago is open thursday, friday, saturday. 710 n clark, river north.',
+'summer is officially a reason to be out. stardust is open thursday, friday, saturday. 710 n clark.',
 '', '', '', '2026-06-15', '08:00');
 
 -- ── POST 201 · TikTok Video · Jun 15 · Summer launch ─────────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'summer karaoke at stardust chicago. outdoor heat, indoor energy. 710 n clark, river north. doors at 8.',
+'summer just started and stardust is already the answer.',
 '',
-'Summer opener — exteriors of the building on a warm night, then cut inside to the room coming alive. That outdoor-to-indoor warmth. Raw, natural.',
-'Script: "summer is here. and stardust is open."
+'Summer opener. Shoot exteriors on a warm evening — the building lit, the street alive — then move inside to the room filling up. Natural light transition, no filters. Let the heat tell the story.',
+'Script: "summer. stardust chicago. already."
 
-0:00 · 2s — Exterior: warm evening light on 710 N Clark, people walking in
-0:02 · 2s — Front door opens, cool interior floods in — the threshold
-0:04 · 2s — Inside: bar lit warm, room filling, first drinks poured
-0:06 · 2s — Stage lit, mic ready, the room leaning toward it
-0:08 · 2s — First singer of the summer — fully in it
-0:10 · 2s — Wide room — people arriving still, energy climbing
-0:12 · 4s — End card: STARDUST CHICAGO · EVERY THU FRI SAT · 710 N CLARK
-Total: ~16s',
+0:00 · 3s — Exterior: 710 N Clark in warm evening light, people heading toward the door
+0:03 · 2s — The threshold: door swings open, sound and light pour out
+0:05 · 2s — Bar lit warm, first drinks going out, the room just getting started
+0:07 · 2s — Stage: mic in stand, light on, a singer stepping up
+0:09 · 2s — First song of the summer — crowd leans in before the chorus
+0:11 · 2s — Wide room, the night arriving
+0:13 · 4s — End card: STARDUST CHICAGO · THU FRI SAT · 710 N CLARK
+Total: ~17s',
 '2026-06-15', '10:00');
 
 -- ── POST 202 · Instagram Reel · Jun 15 · Summer is here ──────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'summer nights at stardust chicago just hit different.
+'The summer nights at Stardust are a specific kind of good.
 
 Thu · Fri · Sat · Doors 8pm
 📍 710 N Clark, River North',
-'#stardustchicago #karaokechicago #summerchicago #chicagonightlife #riverNorth #thingstodoinchicago',
-'Warm-light summer reel: exterior-to-interior, that golden late-evening hour into a room fully alive.',
-'Script: "summer nights at stardust chicago. the kind you don''t forget."
+'#stardustchicago #karaokechicago #summerchicago #chicagonightlife #riverNorth #thingstodoinchicago #karaokebar',
+'Warm-light summer opener. Exterior dusk shot bleeding into the interior glow. The room filling from nearly empty to alive. Golden hour energy stays inside.',
+'Script: "summer at stardust. three nights a week. the rest is yours."
 
-0:00 · 2s — Exterior evening light — the street, the signage, the city alive
-0:02 · 2s — People pushing through the front door, warmth of the room
-0:04 · 2s — Bar detail: condensation on glasses, the warm light
-0:06 · 2s — Singer on stage, crowd gathered close
-0:08 · 2s — Room wide — full summer crowd, loose and happy
-0:10 · 2s — Close on two people singing along together, arms around each other
-0:12 · 4s — End card: STARDUST CHICAGO · SUMMER · 710 N CLARK
+0:00 · 2s — Exterior: fading daylight on Clark St, the Stardust sign lit
+0:02 · 2s — Door held open — the sound escaping into the warm night
+0:04 · 2s — Bar close-up: condensation on a cold glass, warm glow behind it
+0:06 · 2s — Singer on stage, crowd drifting closer without realizing it
+0:08 · 2s — Two people singing together at the edge of the room — they just met
+0:10 · 2s — Wide room at full summer capacity
+0:12 · 4s — End card: STARDUST CHICAGO · SUMMER 2026 · 710 N CLARK
 Total: ~16s',
 '2026-06-15', '11:00');
 
@@ -69,28 +69,28 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Story', 'draft',
-'Tonight. Thursday karaoke at Stardust.
+'Thursday night at Stardust.
 Doors 8pm · Open till 2am
 📍 710 N Clark',
 '',
-'Story (9:16). Warm crowd shot from inside. Bold text overlay. Countdown sticker to 8pm.',
+'Story (9:16). Interior shot — warm bar light, the room at that early Thursday energy before the crowd really hits. Text overlay bold and clean. Countdown sticker to 8pm.',
 '', '2026-06-18', '16:00');
 
 -- ── POST 204 · TikTok Video · Jun 18 · Thursday summer heat ──────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'thursday night in june at stardust chicago. the room is warm. so is the crowd. 710 n clark.',
+'june thursday at stardust. the heat followed everyone inside.',
 '',
-'Summer Thursday vibe — windows open, warm air, the crowd loose and easy. Feels like the start of something. Raw footage, natural audio.',
-'Script: "thursday night at stardust. summer is doing something to this room."
+'Summer Thursday vibe — shoot when the windows are still open, that warm evening air mixing with the bar smell and the sound. Let the looseness of a hot june night do the work. No staging.',
+'Script: "june. thursday. stardust. the room is warm before anyone even sings."
 
-0:00 · 2s — Wide shot: windows open, warm evening light still coming through
-0:02 · 2s — The bar — people leaning in, summer looseness in every posture
-0:04 · 2s — Singer at mic, relaxed, confident — summer energy
-0:06 · 2s — Crowd reacts — laughter, hands up, total buy-in
-0:08 · 2s — Close on two regulars — they know this room
-0:10 · 2s — Wide room, full now — the night fully arrived
+0:00 · 2s — Wide: windows cracked, evening light still in the room, crowd settling in
+0:02 · 2s — Close on two people at the bar — summer-loose, no plans to leave early
+0:04 · 2s — The songbook going around — someone circling their choice
+0:06 · 2s — Singer at mic: first song of the night, nobody nervous yet
+0:08 · 2s — Crowd reaction — that easy june laughter
+0:10 · 2s — Wide room, the Thursday night fully arrived
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY THURSDAY · 710 N CLARK
 Total: ~16s',
 '2026-06-18', '10:00');
@@ -99,23 +99,20 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'friday night in summer. there is nowhere else to be.
+'Friday in summer at Stardust Chicago. The kind of night that earns the weekend.
 
-Stardust Chicago · 710 N Clark · River North
-Open till 4am',
-'#fridaynight #stardustchicago #karaokechicago #summerchicago #latenightchicago #riverNorth',
-'Friday summer night reel — outdoor-to-indoor transition, room at full Friday energy, late night vibe.',
-'Script: "friday summer night at stardust. open till 4am."
+710 N Clark · River North · Open till 4am',
+'#fridaynight #stardustchicago #karaokechicago #summerchicago #latenightchicago #riverNorth #chicagonightlife',
+'Friday summer night reel. Shoot the room at that mid-evening peak — around 11pm when it''s fullest and loosest. Let the natural crowd sound carry the energy.',
+'Script: "friday at stardust. nobody''s thinking about tomorrow."
 
-0:00 · 1.5s — Exterior: warm night, people heading in
-0:01 · 1.5s — Door opens into the sound and light
-0:03 · 1.5s — Bar packed, drinks in every hand
-0:04 · 1.5s — Singer in full flight, room locked in
-0:06 · 1.5s — Wide — the Friday crowd at its loosest
-0:07 · 1.5s — Close on a face singing every word
-0:09 · 1.5s — Late night bar — 2am energy, no one leaving
-0:10 · 2s — On-screen: "EVERY FRIDAY · TILL 4AM"
-0:12 · 4s — End card: STARDUST CHICAGO · 710 N CLARK
+0:00 · 2s — Exterior: warm night, the line outside moving, 710 N Clark lit up
+0:02 · 2s — Inside: the bar at full Friday pressure — everyone in
+0:04 · 2s — Singer mid-chorus, no hesitation, arms out
+0:06 · 2s — Crowd responding — the whole room at once
+0:08 · 2s — Close on a face: eyes closed, singing every word
+0:10 · 2s — Bar at 1am — still going, no one asking for the check
+0:12 · 4s — End card: STARDUST CHICAGO · EVERY FRIDAY · TILL 4AM
 Total: ~16s',
 '2026-06-19', '11:00');
 
@@ -123,17 +120,17 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'friday night karaoke at stardust chicago. 710 n clark. open till 4am. come.',
+'the walk into stardust on a friday night is its own thing.',
 '',
-'POV walk-in on a summer Friday — handheld through the door, into the crowd, ending at the stage. Raw audio, no music overlay.',
-'Script: "friday night. stardust chicago. walk in."
+'POV walk-in on a summer Friday. Handheld from the sidewalk through the door and into the crowd. No cuts until the singer comes into frame. Raw audio only — let the sound build as you move through the door.',
+'Script: "friday. 710 n clark. walk in."
 
-0:00 · 2s — POV: standing outside 710 N Clark, summer night, the sound leaking out
-0:02 · 2s — Push through the door — sound hits, lights shift
-0:04 · 2s — Moving through the crowd — faces, drinks, energy
-0:06 · 2s — Approaching the bar — the bartender mid-pour
-0:08 · 2s — Turning toward stage — singer coming into frame
-0:10 · 2s — Stage fills frame — singer at peak, crowd behind you
+0:00 · 2s — POV: standing on Clark St, summer night, sound leaking from the door
+0:02 · 2s — Push through — sound doubles, warm light hits
+0:04 · 2s — Moving through the crowd — faces, drinks, the room in motion
+0:06 · 2s — Pass the bar — bartender mid-pour, doesn''t look up
+0:08 · 2s — Turning toward the stage — a singer coming into frame
+0:10 · 2s — Stage fills the shot — full voice, full room behind you
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY FRIDAY · TILL 4AM
 Total: ~16s',
 '2026-06-19', '10:00');
@@ -142,12 +139,12 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'saturday night at stardust chicago. first real summer weekend. till 5am.',
+'first real saturday of summer at stardust. the room knew.',
 '',
-'One uncut summer Saturday clip. The room at full capacity. Whatever is happening on stage, the crowd doing exactly what it does.',
-'Script: "saturday. first real weekend of summer. stardust chicago."
+'One uncut clip. Saturday night at peak — whatever is happening on stage is secondary to the room itself. Let it breathe. No edits. Raw audio.',
+'Script: "saturday. first real summer weekend. stardust chicago."
 
-0:00 · 22s — One uncut clip, raw audio. The room at full Saturday summer peak — whoever is on stage, the crowd exactly where it should be. Hot room, summer looseness, nowhere anyone is trying to be except here.
+0:00 · 22s — One uncut clip, raw audio. Saturday peak: the stage, the crowd, the room as a single warm loud thing. Nobody staged, nothing forced. The first summer Saturday doing exactly what it should.
 0:22 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~26s',
 '2026-06-20', '10:00');
@@ -156,19 +153,19 @@ Total: ~26s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'first saturday of summer at stardust chicago. the room knew.
+'First Saturday of summer at Stardust Chicago. The room didn''t need warming up.
 
 710 N Clark · River North · Till 5am',
-'#saturdaynight #stardustchicago #karaokechicago #summerchicago #chicagonightlife #latenightchicago',
-'Peak Saturday summer energy — wide room shots, crowd reactions, the room at its most alive.',
-'Script: "first saturday of summer. this is what stardust looks like."
+'#saturdaynight #stardustchicago #karaokechicago #summerchicago #chicagonightlife #latenightchicago #riverNorth',
+'Saturday summer energy reel. Shoot the crowd first — wide shots, faces, group reactions — then the singer. The room is the story, not the performance.',
+'Script: "first saturday of summer. this room was ready."
 
-0:00 · 2s — Wide: summer Saturday crowd, wall to wall
-0:02 · 2s — Singer fully committed, arms out, the crowd returns it
-0:04 · 2s — Bar packed — summer drinks, summer heat, summer faces
-0:06 · 2s — Close on a group, mid-chorus, arm in arm
+0:00 · 2s — Wide: Saturday crowd, wall to wall, summer loose
+0:02 · 2s — Singer at the mic — arms out, the crowd already moving
+0:04 · 2s — Group mid-chorus: arm in arm, every word
+0:06 · 2s — Bar packed — the summer drinks, the warm faces
 0:08 · 2s — Different singer, different energy, same room loving it
-0:10 · 2s — Wide again — the full thing, undeniable
+0:10 · 2s — Wide again — the full picture, undeniable
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~16s',
 '2026-06-20', '11:00');
@@ -181,36 +178,37 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 Open till 5am.
 📍 710 N Clark',
 '',
-'Story (9:16). Packed Saturday crowd photo. Bold text overlay. Countdown sticker to 8pm.',
+'Story (9:16). Saturday crowd at its fullest — warm light, packed room, the energy visible. Countdown sticker optional.',
 '', '2026-06-20', '16:00');
 
 -- ── POST 210 · Facebook Post · Jun 21 · Week 1 recap ─────────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Facebook', 'Post', 'draft',
-'First full summer weekend at Stardust Chicago. The room was exactly what a summer Saturday should be.
+'First full summer weekend at Stardust Chicago. Saturday was the kind of night the room is built for.
 
-Three more nights next week — Thursday, Friday, Saturday.
+We''re back Thursday. Three more nights next week — and the weeks after that.
+
 Doors 8pm · 710 N Clark, River North',
 '',
-'Weekend recap photo — Saturday crowd at its peak, warm light, the room full.',
+'Weekend recap. Wide Saturday crowd photo — warm light, the room at capacity, the kind of image that makes someone text a friend.',
 '', '2026-06-21', '13:00');
 
 -- ── POST 211 · Instagram Carousel · Jun 23 · Summer venue feature ────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Carousel', 'draft',
-'the room in summer.
+'The room in summer. Swipe through.
 
-Slide 1: Exterior warm evening light
-Slide 2: Bar detail — condensation, warm glow
-Slide 3: Stage lit, crowd gathering
-Slide 4: Room wide at capacity
-Slide 5: Late-night bartender, last call energy
+Slide 1: 710 N Clark — the building at dusk
+Slide 2: Bar detail — cold glass, warm light, the hour before midnight
+Slide 3: Stage lit, mic ready, the room starting to gather
+Slide 4: Full capacity — the room the way it''s supposed to look
+Slide 5: The bar at last call — the people who made it
 
-710 N Clark · River North · Thu Fri Sat',
-'#stardustchicago #karaokebar #chicagobar #riverNorth #karaokechicago #summerchicago #chicagonightlife',
-'5-slide summer venue carousel. Warm light throughout. The room as a character.',
+📍 710 N Clark · Thu Fri Sat',
+'#stardustchicago #karaokebar #chicagobar #riverNorth #karaokechicago #summerchicago #chicagonightlife #latenightchicago',
+'5-slide summer venue carousel. One coherent mood: warm, a little dark, theatrical. The room as a character across five frames.',
 '', '2026-06-23', '11:00');
 
 
@@ -222,24 +220,24 @@ Slide 5: Late-night bartender, last call energy
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'thursday at stardust chicago. 710 n clark. doors at 8. see you there.',
+'tomorrow. stardust. thursday. 710 n clark. you know what to do.',
 '', '', '', '2026-06-24', '08:00');
 
 -- ── POST 213 · TikTok Video · Jun 25 · Thursday regulars ─────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'the regulars at stardust chicago know exactly what they''re doing. 710 n clark. every thursday.',
+'the regulars at stardust don''t look around when they walk in.',
 '',
-'Regular-focused cut — faces in the crowd who look like they''ve been here a hundred times. The room, not the singers. That sense of a community that has already formed.',
-'Script: "the regulars at stardust. they know."
+'Regulars-only cut. Faces in the crowd who look like they built this place. Shoot the bar, the tables, the back of the room — the people who belong here. The singer is almost incidental.',
+'Script: "the regulars at stardust. they already know."
 
-0:00 · 2s — Wide room — regulars at their spots, familiar as furniture
-0:02 · 2s — Close on a regular at the bar — relaxed, drink in hand, exactly where they want to be
-0:04 · 2s — Two regulars talking — they know each other because of this room
-0:06 · 2s — Regular at mic — no nerves, been here before
-0:08 · 2s — Crowd: some faces new, some faces that know every word
-0:10 · 2s — A regular orders without looking at the menu — the bar knows too
+0:00 · 2s — Regular walking in — zero hesitation, straight to their spot
+0:02 · 2s — Close: drink already in hand, watching the stage like they''ve seen this a hundred times
+0:04 · 2s — Two regulars at the bar — they know each other because of this room
+0:06 · 2s — Regular at the mic — no nerves, no performance of nervousness
+0:08 · 2s — Crowd: the faces that know every word mixed with the faces learning them
+0:10 · 2s — Bartender pours without being asked — the bar knows too
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY THURSDAY · 710 N CLARK
 Total: ~16s',
 '2026-06-25', '10:00');
@@ -248,31 +246,31 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Story', 'draft',
-'Tonight. Stardust Chicago.
+'Tonight at Stardust Chicago.
 Thursday karaoke · Doors 8pm
 📍 710 N Clark',
 '',
-'Story (9:16). Close shot of the bar or stage — the warmth of the room before the crowd arrives. Bold text overlay.',
+'Story (9:16). Shoot the bar or stage just before the crowd fully arrives — that specific warmth of the room when it''s still becoming itself. Text overlay clean and bold.',
 '', '2026-06-25', '16:00');
 
 -- ── POST 215 · Instagram Reel · Jun 26 · The room itself ─────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'stardust chicago isn''t about the singer. it''s about what happens when the room decides to go with them.
+'The singer is up there. But the room is doing the work.
 
 710 N Clark · River North',
-'#stardustchicago #karaokechicago #chicagonightlife #fridaynight #riverNorth #karaoke',
-'Crowd-first reel — singers in background, the room in foreground. Faces, reactions, connection.',
-'Script: "it''s not about the singer. it''s about the room."
+'#stardustchicago #karaokechicago #chicagonightlife #fridaynight #riverNorth #karaoke #chicagobar',
+'Crowd-first reel — the singer stays in soft focus or background. Shoot the faces, the reactions, the private moments between strangers. The room is the subject.',
+'Script: "the singer is up there. the room is what''s happening."
 
-0:00 · 2s — Stage in background, crowd in foreground — the crowd is the point
-0:02 · 2s — Close on a face in the crowd, mouthing every word
-0:04 · 2s — Group of strangers, arms around each other, mid-chorus
-0:06 · 2s — Crowd clapping — the whole room synced up
-0:08 · 2s — Singer glances back — the room is giving it back to them
-0:10 · 2s — Wide room — the whole thing, undeniable
-0:12 · 4s — End card: STARDUST CHICAGO · THE ROOM · 710 N CLARK
+0:00 · 2s — Stage soft in the background; crowd close and sharp in frame
+0:02 · 2s — Close on a face: mouthing every word, completely absorbed
+0:04 · 2s — Group of strangers arm-in-arm — they didn''t arrive together
+0:06 · 2s — The crowd clapping in unison — the room finding its sync
+0:08 · 2s — Singer glances back — the room is giving it all back
+0:10 · 2s — Wide: the whole thing at once, the room as one
+0:12 · 4s — End card: STARDUST CHICAGO · 710 N CLARK
 Total: ~16s',
 '2026-06-26', '11:00');
 
@@ -280,21 +278,21 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'friday night at stardust chicago. the room has a thing. 710 n clark. till 4am.',
+'friday at stardust. the room has a thing and you have to be in it to understand.',
 '',
-'Fast-cut crowd energy. No single hero — the room is the subject. Rapid cuts, natural audio spikes.',
-'Script: "friday night. the room at stardust has a thing."
+'Fast-cut crowd energy. No single hero shot — every cut is something different. Rapid rhythm, natural audio peaks between cuts. The room is the edit.',
+'Script: "friday at stardust chicago. the room."
 
-0:00 · 1s — Bar wide, the room alive
-0:01 · 1s — Crowd face — laughing, locked in
-0:02 · 1s — Singer at mic — confident, summer loose
-0:03 · 1s — Group reaction — total investment
-0:04 · 1s — Bar — drinks going out fast
-0:05 · 1s — Different singer, different song, same energy
-0:06 · 1s — Two people singing along to each other
-0:07 · 1s — Wide room — full
-0:08 · 1s — Late night bar — 1am energy, no one leaving
-0:09 · 1s — Someone discovering the song book for the first time
+0:00 · 1s — Bar wide, warm light, the room humming
+0:01 · 1s — Face in the crowd: laughing, fully in
+0:02 · 1s — Singer approaching the mic — the crowd already watching
+0:03 · 1s — Group reaction: total investment, instant
+0:04 · 1s — Bar: drinks going out three at a time
+0:05 · 1s — Second singer, second song, same energy
+0:06 · 1s — Two strangers singing at each other
+0:07 · 1s — Wide room — every inch filled
+0:08 · 1s — 1am: the bar still moving, no one near the door
+0:09 · 1s — Someone picking up the songbook for the first time
 0:10 · 2s — On-screen: "EVERY FRIDAY · TILL 4AM"
 0:12 · 4s — End card: STARDUST CHICAGO · 710 N CLARK
 Total: ~16s',
@@ -308,24 +306,24 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 Open till 5am.
 📍 710 N Clark',
 '',
-'Story (9:16). Packed Saturday crowd — the room at its peak. Countdown sticker if useful.',
+'Story (9:16). Packed Saturday crowd — the room shoulder to shoulder, warm light, energy visible. No text needed except the overlay.',
 '', '2026-06-27', '16:00');
 
 -- ── POST 218 · TikTok Video · Jun 27 · Saturday late night ──────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'saturday night karaoke at stardust chicago. till 5am. the room does not run out of energy. 710 n clark.',
+'it was 2am on a saturday at stardust and the room was still full. nobody looked tired.',
 '',
-'Late-Saturday energy — the room past midnight, still going hard. The regulars who don''t leave.',
-'Script: "saturday at stardust. it''s 2am. the room is full."
+'Late Saturday — shoot past midnight. The crowd thinner but more committed. The energy has changed: it''s something else now. Not louder, but denser. Capture what 2am looks like when no one is thinking about leaving.',
+'Script: "saturday at stardust. 2am. the room isn''t done."
 
-0:00 · 2s — Clock detail: 2:00am on a phone in the crowd
-0:02 · 2s — Wide room — still packed, somehow even looser
-0:04 · 2s — Singer at mic — 2am voice, total commitment
-0:06 · 2s — Crowd reaction — fully locked in, nobody going anywhere
-0:08 · 2s — Bar: late-night pour, bartender mid-flow
-0:10 · 2s — Wide again — the room that does not quit
+0:00 · 2s — Clock visible on a phone in the crowd: 2:07am
+0:02 · 2s — Wide room — still packed, somehow looser than before
+0:04 · 2s — Singer at 2am: no self-consciousness left, just the song
+0:06 · 2s — Crowd response — the 2am crowd gives more than the 10pm crowd
+0:08 · 2s — Bar: late pour, the bartender who has been here since 8
+0:10 · 2s — Wide again — the room that does not run out
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~16s',
 '2026-06-27', '10:00');
@@ -334,19 +332,19 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'the people who keep coming back to stardust chicago. they know something.
+'Some people have been coming to Stardust every Saturday for months. You can tell.
 
 710 N Clark · River North · Every Saturday till 5am',
-'#saturdaynight #stardustchicago #karaokechicago #chicagonightlife #latenightchicago #riverNorth',
-'Reel focused on the regulars — the faces that know the room, the ones who''ve made it their own.',
-'Script: "they keep coming back. because this room keeps giving."
+'#saturdaynight #stardustchicago #karaokechicago #chicagonightlife #latenightchicago #riverNorth #karaokebar',
+'Saturday regulars reel — the people who have made this room theirs. Shoot the familiarity: how they move, where they sit, how the bartender looks at them.',
+'Script: "the stardust regulars. they''re not performing. they''re home."
 
-0:00 · 2s — Regular at the bar — they''ve been here before, you can tell
-0:02 · 2s — Group of regulars — they found each other because of this room
-0:04 · 2s — Regular at the mic — no hesitation, they know the drill
-0:06 · 2s — Crowd of regulars singing along — every word, no exception
-0:08 · 2s — Late night regular — 3am, still going
-0:10 · 2s — Wide room — some new faces, some old ones, all the same
+0:00 · 2s — Regular at the bar: settled in, drink already there, watching the room
+0:02 · 2s — Two regulars greet each other — they met here first
+0:04 · 2s — Regular at the mic: no ceremony, no buildup, just starts singing
+0:06 · 2s — The crowd of regulars: every word, zero hesitation
+0:08 · 2s — 3am: the regulars are still here — the new faces left an hour ago
+0:10 · 2s — Wide room: a mix of old and new faces, all equally in
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~16s',
 '2026-06-27', '11:00');
@@ -355,7 +353,7 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'stardust chicago was open till 5am last night. the room earned it. back thursday.',
+'stardust was open till 5am saturday. the room did not run out of night. back thursday.',
 '', '', '', '2026-06-28', '08:00');
 
 
@@ -367,32 +365,32 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Carousel', 'draft',
-'this week at stardust chicago: thu · fri · july 4th saturday.
+'This week at Stardust Chicago. Three nights. One of them is July 4th.
 
-Slide 1: "THU JUN 2 · DOORS 8PM · 710 N CLARK"
-Slide 2: "FRI JUL 3 · TILL 4AM"
+Slide 1: "THU JUL 2 · DOORS 8PM · 710 N CLARK"
+Slide 2: "FRI JUL 3 · TILL 4AM · 710 N CLARK"
 Slide 3: "SAT JUL 4 · INDEPENDENCE DAY · TILL 5AM"
-Slide 4: The room at its most packed
-Slide 5: "710 N CLARK · RIVER NORTH · FREE TO SING"',
-'#stardustchicago #july4th #independenceday #karaokechicago #chicagonightlife #riverNorth',
-'5-slide July 4th week announcement carousel. Bold text, warm patriotic tones without being corny. Red and warm gold light in photos.',
+Slide 4: The room — crowd, stage, the whole picture
+Slide 5: "ANYONE CAN SING · 710 N CLARK · RIVER NORTH"',
+'#stardustchicago #july4th #independenceday #karaokechicago #chicagonightlife #riverNorth #summerchicago',
+'5-slide July 4th week preview carousel. Bold type on dark backgrounds for the schedule slides. Warm red and gold tones in the room photo — don''t force the patriotic angle, let the room do it.',
 '', '2026-06-30', '11:00');
 
 -- ── POST 222 · TikTok Video · Jul 2 · Thursday July 4th week ─────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'thursday at stardust chicago. july 4th weekend starts now. 710 n clark, river north.',
+'july 4th weekend starts thursday. stardust chicago. 710 n clark.',
 '',
-'July 4th week Thursday energy — the anticipation of the big weekend. The room aware that Saturday is going to be something.',
-'Script: "thursday at stardust. july 4th weekend starts now."
+'July 4th week opener — Thursday energy with the holiday weekend looming. The crowd already feels different: longer weekend, looser plans, everyone out a little earlier. Shoot that anticipation.',
+'Script: "july 4th weekend. it starts thursday at stardust."
 
-0:00 · 2s — Wide room: Thursday crowd, already feeling the long weekend energy
-0:02 · 2s — Bar packed — people who got off work and came straight here
-0:04 · 2s — Singer at mic — something patriotic, something unexpected
-0:06 · 2s — Crowd reacts — laughter, recognition, total buy-in
-0:08 · 2s — Someone in the crowd with a small American flag — completely unironic
-0:10 · 2s — Wide again — the room at Thursday peak, knowing Saturday is coming
+0:00 · 2s — Wide room: Thursday crowd with that long-weekend looseness already in it
+0:02 · 2s — Bar packed — people who didn''t go home after work today
+0:04 · 2s — Singer chooses something patriotic — the crowd recognizes it immediately
+0:06 · 2s — Room reacts: laughter, arms up, total buy-in
+0:08 · 2s — Someone in the crowd holding a small flag — they brought it themselves
+0:10 · 2s — Wide again — Thursday at peak, Saturday already in the air
 0:12 · 4s — End card: STARDUST CHICAGO · JUL 4TH WEEKEND · 710 N CLARK
 Total: ~16s',
 '2026-07-02', '10:00');
@@ -405,24 +403,24 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 Stardust Chicago · Doors 8pm
 📍 710 N Clark',
 '',
-'Story (9:16). Bold text overlay on a warm Thursday crowd shot. Firework emoji is acceptable here. Countdown sticker to 8pm.',
+'Story (9:16). Warm Thursday crowd shot — the room at that pre-holiday energy. Bold text overlay. Countdown sticker to 8pm. A firework emoji is acceptable here.',
 '', '2026-07-02', '16:00');
 
 -- ── POST 224 · TikTok Video · Jul 3 · Friday July 4th eve ────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'july 4th eve at stardust chicago. nobody was watching fireworks. they were here. 710 n clark. till 4am.',
+'july 3rd. the fireworks were fine. this was better.',
 '',
-'July 3rd Friday — the city is in holiday mode, Stardust benefits. The room fuller than a regular Friday, the energy different.',
-'Script: "july 3rd at stardust. nobody left early."
+'July 3rd Friday — the city is in holiday mode and Stardust gets the overflow. Shoot a room that''s bigger, louder, and more chaotic than a regular Friday. The holiday brought the wrong people to the right place.',
+'Script: "july 3rd at stardust. the fireworks people came in after."
 
-0:00 · 2s — Exterior: city in holiday mode, Stardust lit up
-0:02 · 2s — Inside: Friday crowd, bigger than usual, holiday looseness
-0:04 · 2s — Singer doing something patriotic — crowd immediately screams
-0:06 · 2s — Crowd: arms up, full volume, completely unhinged (in the best way)
-0:08 · 2s — Bar: the July 3rd pour — everyone staying late
-0:10 · 2s — Wide room at 1am — still packed, no one leaving before 4
+0:00 · 2s — Exterior: city in full July 3rd mode, Stardust lit up
+0:02 · 2s — Inside: fuller than a normal Friday, holiday energy in every posture
+0:04 · 2s — Singer picks the most obvious song — the crowd is already screaming
+0:06 · 2s — Arms up, full volume — the room at its most unhinged (in the best way)
+0:08 · 2s — Bar: the July 3rd pour — everyone''s staying till 4
+0:10 · 2s — Wide at 1am — still packed, no one is leaving before close
 0:12 · 4s — End card: STARDUST CHICAGO · JULY 3RD · TILL 4AM · 710 N CLARK
 Total: ~16s',
 '2026-07-03', '10:00');
@@ -431,19 +429,19 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'july 3rd at stardust chicago. the city had plans. this was the plan.
+'July 3rd at Stardust Chicago. The city had a lot of plans. This was the one that worked out.
 
 710 N Clark · River North · Till 4am',
-'#july4th #stardustchicago #karaokechicago #chicagonightlife #fridaynight #latenightchicago',
-'July 3rd reel — holiday energy in a karaoke bar, the room in full summer patriotic mode without trying.',
-'Script: "the city had plans for july 3rd. stardust was the plan."
+'#july4th #stardustchicago #karaokechicago #chicagonightlife #fridaynight #latenightchicago #summerchicago',
+'July 3rd reel — the holiday eve energy that no fireworks show can match. Shoot crowd moments that look genuinely unplanned: the spontaneous group sing, the stranger who joins, the song that lands wrong and perfectly.',
+'Script: "july 3rd. stardust chicago. everyone had a plan. this was the plan."
 
-0:00 · 2s — Wide room, holiday crowd — bigger, louder, more
-0:02 · 2s — Singer choosing the most obvious patriotic song, the crowd erupting
-0:04 · 2s — Group of people, arms around each other, screaming the words
-0:06 · 2s — Bar: holiday cocktails, everyone buying a round
-0:08 · 2s — Singer finishes, crowd goes genuinely wild
-0:10 · 2s — Wide room — packed, the July energy undeniable
+0:00 · 2s — Wide: holiday crowd — bigger, louder, already committed
+0:02 · 2s — Singer picks the obvious patriotic anthem — the room erupts before the first note
+0:04 · 2s — Group arm-in-arm, full volume, every word
+0:06 · 2s — Bar: everyone buying a round, July 3rd cocktails going out fast
+0:08 · 2s — Singer finishes — the crowd''s response is genuinely wild
+0:10 · 2s — Wide — the room in full July 3rd mode
 0:12 · 4s — End card: STARDUST CHICAGO · JULY 3RD · 710 N CLARK
 Total: ~16s',
 '2026-07-03', '11:00');
@@ -452,17 +450,17 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'july 4th at stardust chicago. karaoke is the most american thing we could think of. 710 n clark. till 5am.',
+'july 4th karaoke at stardust chicago. the founding fathers would have wanted this.',
 '',
-'July 4th Saturday — the big night. The room at its most chaotic and wonderful. The stars and stripes of karaoke: anyone can get on that mic.',
-'Script: "july 4th. stardust chicago. karaoke is the most american thing."
+'July 4th Saturday — the big night. Lean into the absurdity and the sincerity at the same time. Shoot the room as proof that karaoke is the most democratic thing: the mic goes to anyone.',
+'Script: "july 4th. stardust chicago. anyone can get on that mic. that''s the whole point."
 
-0:00 · 2s — Wide room: Saturday July 4th crowd, wall to wall
-0:02 · 2s — Singer doing something bold and american — the mic as a birthright
-0:04 · 2s — Crowd: full volume, fireworks-adjacent energy
-0:06 · 2s — Someone in the crowd waving a flag — nobody told them to
-0:08 · 2s — Late night: 3am on July 4th, the room still going
-0:10 · 2s — Wide again — the kind of night that justifies a holiday
+0:00 · 2s — Wide room: July 4th Saturday, wall to wall
+0:02 · 2s — Singer steps up — the song choice is extremely American
+0:04 · 2s — Crowd: fireworks-adjacent energy, full volume
+0:06 · 2s — Someone in the crowd waving a flag — fully unironic
+0:08 · 2s — 3am on July 4th — the room still going like it''s 11pm
+0:10 · 2s — Wide again — a night that justifies having a holiday
 0:12 · 4s — End card: STARDUST CHICAGO · JULY 4TH · TILL 5AM · 710 N CLARK
 Total: ~16s',
 '2026-07-04', '10:00');
@@ -471,19 +469,19 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'july 4th at stardust chicago. the most american thing we could think of: a room where anyone can sing.
+'July 4th at Stardust Chicago. One mic. Anyone can get up there. That''s kind of the whole idea.
 
 710 N Clark · River North · Till 5am',
-'#july4th #independenceday #stardustchicago #karaokechicago #chicagonightlife #saturdaynight',
-'Independence Day reel — the karaoke-as-freedom angle. Raw, warm, a little funny. July 4th crowd at its absolute best.',
-'Script: "july 4th. everyone gets a mic. that''s kind of the point."
+'#july4th #independenceday #stardustchicago #karaokechicago #chicagonightlife #saturdaynight #summerchicago',
+'Independence Day reel. The karaoke-as-freedom angle, played warm not corny. Shoot the variety: the unexpected song choice, the unlikely singer, the crowd that loses it for both.',
+'Script: "july 4th. everyone gets the mic. that''s freedom."
 
 0:00 · 2s — Wide room, full capacity, July 4th energy
-0:02 · 2s — Singer steps up — you would not have predicted them choosing this song
-0:04 · 2s — The song lands — crowd goes completely in
-0:06 · 2s — Different singer — opposite energy, just as committed
-0:08 · 2s — Crowd: arm in arm, full volume, the room as a single thing
-0:10 · 2s — Wide — the whole room, Independence Day at Stardust
+0:02 · 2s — Someone steps up you would not have predicted — the song choice is perfect
+0:04 · 2s — It lands — the crowd goes completely in
+0:06 · 2s — Different singer, opposite vibe, same commitment
+0:08 · 2s — The room arm-in-arm, full voice, one single thing
+0:10 · 2s — Wide — all of it at once, Independence Day at Stardust
 0:12 · 4s — End card: STARDUST CHICAGO · JULY 4TH · 710 N CLARK
 Total: ~16s',
 '2026-07-04', '11:00');
@@ -496,7 +494,7 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 Open till 5am.
 📍 710 N Clark',
 '',
-'Story (9:16). July 4th crowd photo — the room packed, warm light. Bold text overlay. American flag emoji is fine here.',
+'Story (9:16). July 4th crowd — the room packed, warm light, the energy readable. Bold text overlay. An American flag emoji is fine here.',
 '', '2026-07-04', '16:00');
 
 -- ── POST 229 · Facebook Post · Jul 4 · Independence Day ─────────────────────
@@ -505,20 +503,20 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 (uid, 'Facebook', 'Post', 'draft',
 'Happy Fourth of July from Stardust Chicago.
 
-We''re open tonight till 5am — because karaoke is honestly the most American thing we could offer. One mic, one room, anyone can get up there.
+Tonight we''re open till 5am. Because if karaoke isn''t the most American thing — one room, one mic, anyone who wants it — we don''t know what is.
 
-See you tonight.
+No cover. No reservations. Just show up.
 
-Doors 8pm · 710 N Clark, River North · No cover',
+Doors 8pm · 710 N Clark, River North',
 '',
-'July 4th Facebook post. Warm crowd photo or stage shot with American flag visible somewhere naturally.',
+'July 4th Facebook post. Crowd shot or stage photo with a flag visible somewhere naturally — not staged, just in the room. Warm light.',
 '', '2026-07-04', '13:00');
 
 -- ── POST 230 · Twitter/X Tweet · Jul 5 · July 4th recap ─────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'stardust chicago was open till 5am on july 4th. the room earned it. back thursday.',
+'stardust chicago was open till 5am on july 4th. the room was exactly what a fourth of july should be. back thursday.',
 '', '', '', '2026-07-05', '08:00');
 
 
@@ -530,39 +528,39 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Carousel', 'draft',
-'mid-summer at stardust chicago. the room at its best.
+'Mid-summer at Stardust Chicago. Swipe through.
 
-Slide 1: Wide room at peak capacity — mid-summer Saturday
-Slide 2: Singer at mic, fully committed
-Slide 3: Crowd reaction — the room going with them
-Slide 4: Bar detail — mid-summer drinks, condensation on glass
+Slide 1: Saturday night — wall to wall, the room at full heat
+Slide 2: The mic — whoever''s up there has earned it
+Slide 3: The crowd: their reaction is the whole performance
+Slide 4: Bar close-up — condensation, warm light, the hour before last call
 Slide 5: "THU · FRI · SAT · 710 N CLARK · RIVER NORTH"',
-'#stardustchicago #karaokechicago #summerchicago #chicagonightlife #riverNorth #midnightchicago',
-'5-slide mid-summer carousel. The room at its absolute peak — these are the nights that define the summer.',
+'#stardustchicago #karaokechicago #summerchicago #chicagonightlife #riverNorth #latenightchicago #chicagobar',
+'5-slide mid-summer feature carousel. Shoot these on a Saturday night — the room at its absolute fullest and most confident. These are the definitional Stardust images.',
 '', '2026-07-07', '11:00');
 
 -- ── POST 232 · Twitter/X Tweet · Jul 8 · Wednesday hype ─────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'mid-summer karaoke at stardust chicago. thursday friday saturday. 710 n clark. doors at 8.',
+'stardust this week: thursday friday saturday. the middle of summer. 710 n clark. doors at 8.',
 '', '', '', '2026-07-08', '08:00');
 
 -- ── POST 233 · TikTok Video · Jul 9 · Thursday mid-summer ────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'thursday night karaoke at stardust chicago. mid-summer. the room is at its best right now. 710 n clark.',
+'mid-summer thursday at stardust. the room has settled into itself.',
 '',
-'Mid-summer Thursday — the room has hit its stride. The singers are bolder, the crowd looser, the nights longer. The room at its peak.',
-'Script: "mid-summer thursday at stardust. this is what the room looks like when it''s at its best."
+'Mid-summer Thursday — the room has hit its stride. Regulars are bolder, first-timers feel less like first-timers. Shoot the confidence: people who have been here enough times to have a spot, a drink, a song.',
+'Script: "mid-summer. the room at stardust has figured out what it is."
 
-0:00 · 2s — Wide room: mid-summer Thursday, the room at full confidence
-0:02 · 2s — Singer who has clearly been here before — no nerves, full commitment
-0:04 · 2s — Crowd: the regulars and the new faces, all the same level now
-0:06 · 2s — Bar: the mid-summer pour — everyone knows what they want
-0:08 · 2s — Stage: the next singer waiting — the queue is long tonight
-0:10 · 2s — Wide again — the room at its mid-summer peak
+0:00 · 2s — Wide room: Thursday at mid-summer confidence — the crowd knows itself
+0:02 · 2s — Singer who''s been here before: no approach nerves, straight to the mic
+0:04 · 2s — Crowd: regulars and newcomers at the same level now
+0:06 · 2s — Bar: everyone knows what they want before they get there
+0:08 · 2s — The next singer already waiting, queue longer than earlier in the summer
+0:10 · 2s — Wide — the room at mid-summer peak
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY THURSDAY · 710 N CLARK
 Total: ~16s',
 '2026-07-09', '10:00');
@@ -575,25 +573,25 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 Doors 8pm · Open till 2am
 📍 710 N Clark',
 '',
-'Story (9:16). Mid-summer crowd shot — the room confident, the energy high. Bold text overlay. Countdown sticker to 8pm.',
+'Story (9:16). Mid-summer crowd shot — the room confident, the energy high, the summer visible in every face. Bold text. Countdown sticker to 8pm.',
 '', '2026-07-09', '16:00');
 
 -- ── POST 235 · TikTok Video · Jul 10 · Friday peak summer ────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'friday night karaoke at stardust chicago. mid-summer. the room knows what it''s doing. 710 n clark. till 4am.',
+'mid-july friday at stardust. the room knows exactly what it''s doing now.',
 '',
-'Friday mid-summer peak — the room at its most confident. Singers who have found their courage over the summer, crowd that knows how to respond.',
-'Script: "mid-summer friday. the room at stardust has figured itself out."
+'Friday mid-summer peak — shoot the confidence. Singers who have found their song over the course of the summer. A crowd that knows when to go louder. The room at its most experienced.',
+'Script: "mid-july. friday. stardust. the room has figured itself out."
 
-0:00 · 1.5s — Wide room: mid-summer Friday, wall to wall
-0:01 · 1.5s — Singer approaching mic with total confidence
-0:03 · 1.5s — They open their mouth — the crowd already reacts
-0:04 · 1.5s — Mid-song: the singer fully locked in, no self-consciousness
-0:06 · 1.5s — Crowd: singing every word, arms up
-0:07 · 1.5s — Bar: the Friday pour, mid-summer thirst
-0:09 · 1.5s — Different singer — completely different song, same commitment
+0:00 · 1.5s — Wide: Friday mid-summer, shoulder to shoulder
+0:01 · 1.5s — Singer walks to the mic without pausing
+0:03 · 1.5s — They open their mouth — the crowd is already there
+0:04 · 1.5s — Mid-chorus: no self-consciousness, total presence
+0:06 · 1.5s — Crowd singing every word, arms up
+0:07 · 1.5s — Bar: the mid-summer pour, nobody asking for water
+0:09 · 1.5s — Different singer, different song, same room behind them
 0:10 · 2s — On-screen: "EVERY FRIDAY · TILL 4AM"
 0:12 · 4s — End card: STARDUST CHICAGO · 710 N CLARK
 Total: ~16s',
@@ -603,18 +601,18 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'mid-summer friday night at stardust chicago. the room has found its voice.
+'Mid-July Friday at Stardust Chicago. The room is at the top of its game right now.
 
 710 N Clark · River North · Till 4am',
-'#fridaynight #stardustchicago #karaokechicago #summerchicago #chicagonightlife #latenightchicago',
-'Mid-summer Friday reel — the room at its most confident, singers bolder, crowd more responsive than any week before.',
-'Script: "mid-summer. the room at stardust has found its voice."
+'#fridaynight #stardustchicago #karaokechicago #summerchicago #chicagonightlife #latenightchicago #karaoke',
+'Mid-summer Friday reel. Shoot the confidence of the room — people who have done this enough times this summer that the nerves are gone. The crowd that reacts before the chorus even hits.',
+'Script: "mid-july friday. stardust. the room doesn''t hesitate anymore."
 
-0:00 · 2s — Wide room: peak Friday mid-summer crowd
-0:02 · 2s — Singer: no hesitation, they''ve done this before — this summer
-0:04 · 2s — The song lands: crowd is already there before the chorus
-0:06 · 2s — Close on the crowd — fully invested, every face in
-0:08 · 2s — Late night: 2am, the room still full, no signs of leaving
+0:00 · 2s — Wide: peak Friday mid-summer, no empty space
+0:02 · 2s — Singer: no pause, straight into it — this is not their first time this summer
+0:04 · 2s — Song lands before the chorus: the crowd was already there
+0:06 · 2s — Close on the crowd — every face fully invested
+0:08 · 2s — 2am: the room still full, no sign of thinning
 0:10 · 2s — Wide — the room at its mid-summer best
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY FRIDAY · TILL 4AM
 Total: ~16s',
@@ -624,23 +622,23 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Story', 'draft',
-'Saturday at Stardust. The room at its best.
+'Saturday at Stardust. Mid-summer.
 Open till 5am.
 📍 710 N Clark',
 '',
-'Story (9:16). Mid-summer Saturday crowd — the room at peak capacity. Bold text. Countdown sticker.',
+'Story (9:16). Mid-summer Saturday crowd at capacity — the room at its most photogenic. Bold text overlay. Countdown sticker optional.',
 '', '2026-07-11', '16:00');
 
 -- ── POST 238 · TikTok Video · Jul 11 · Saturday mid-summer uncut ─────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'mid-summer saturday at stardust chicago. this is the room at its best. 710 n clark. till 5am.',
+'mid-july saturday. stardust chicago. the room at the height of its summer.',
 '',
-'One long uncut clip. Mid-summer Saturday room at absolute peak. The crowd, the singer, the room as a single organism.',
-'Script: "mid-summer saturday. stardust chicago. this is what it looks like at its best."
+'One long uncut clip. The definitive mid-summer Saturday. Whoever is on stage, whatever is happening — the room is the content. No edits, raw audio. Let it run.',
+'Script: "mid-summer saturday at stardust. this is it."
 
-0:00 · 22s — One uncut clip, raw audio. Mid-summer Saturday peak: whoever is on stage, the crowd giving everything back. The room at the height of its summer confidence. Full. Loud. Nobody going anywhere.
+0:00 · 22s — One uncut clip, raw audio. Mid-summer Saturday peak — the room at full summer confidence. The singer, the crowd, the heat, the noise. Nothing staged. Nobody performing for the camera. The best Saturday of the summer, happening.
 0:22 · 4s — End card: STARDUST CHICAGO · MID-SUMMER · TILL 5AM
 Total: ~26s',
 '2026-07-11', '10:00');
@@ -649,18 +647,18 @@ Total: ~26s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'mid-summer saturday at stardust chicago. the room at its absolute best.
+'Mid-summer Saturday at Stardust Chicago. The room was made for this exact night.
 
 710 N Clark · River North · Till 5am',
-'#saturdaynight #stardustchicago #karaokechicago #summerchicago #chicagonightlife #latenightchicago',
-'Mid-summer Saturday reel — the definitive summer night. The room at full capacity, full confidence, full voice.',
-'Script: "mid-summer saturday. this is stardust at its best."
+'#saturdaynight #stardustchicago #karaokechicago #summerchicago #chicagonightlife #latenightchicago #riverNorth',
+'Mid-summer Saturday reel — the definitive summer night. Shoot the fullness, the confidence, the crowd reacting like they were born to react. This is the reel that makes someone book a cab.',
+'Script: "mid-summer saturday. stardust chicago. the room at its height."
 
-0:00 · 2s — Wide room: Saturday wall-to-wall, mid-summer confidence
-0:02 · 2s — Singer: total ownership of the mic, mid-summer boldness
-0:04 · 2s — Crowd reaction: immediate, total, no hesitation
-0:06 · 2s — The room as a single voice — that moment where everyone is in together
-0:08 · 2s — Late night: 3am, mid-summer, the room still gives
+0:00 · 2s — Wide room: wall to wall, peak mid-summer Saturday
+0:02 · 2s — Singer: total ownership — no warmup needed, straight to full
+0:04 · 2s — Crowd reaction: immediate and total
+0:06 · 2s — That moment when everyone sings together — the room as one voice
+0:08 · 2s — 3am: mid-summer, still full, still going
 0:10 · 2s — Wide — the whole thing at once
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~16s',
@@ -670,12 +668,14 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Facebook', 'Post', 'draft',
-'Mid-summer at Stardust Chicago. Three nights a week. Every week. The room gets better every time.
+'Mid-summer at Stardust Chicago. Three nights a week, every week. The room just keeps getting better.
+
+There''s something that happens when the same people come back enough times — the room develops a confidence you can feel when you walk in. That''s where we are right now.
 
 Thursday, Friday, Saturday · Doors 8pm
 710 N Clark, River North · Free to sing · No cover',
 '',
-'Mid-summer weekend recap. Wide room photo from Saturday — the room at its best.',
+'Mid-summer weekend recap. Wide Saturday crowd photo — the room at full capacity, warm light, the kind of image that makes someone wish they were there.',
 '', '2026-07-12', '13:00');
 
 
@@ -687,38 +687,38 @@ Thursday, Friday, Saturday · Doors 8pm
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'the stardust chicago crowd last saturday stayed till 5am. they didn''t want to leave. neither will you.',
+'the stardust crowd last saturday stayed till 5am. nobody was the first to leave. back thursday.',
 '', '', '', '2026-07-14', '08:00');
 
 -- ── POST 242 · Instagram Carousel · Jul 14 · Late night feature ──────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Carousel', 'draft',
-'the people who stay till 5am at stardust chicago know something you don''t.
+'What 3am at Stardust looks like. Swipe through.
 
-Slide 1: 3am — the bar still going
-Slide 2: 4am — late night singers, no audience left who doesn''t want to be there
-Slide 3: 5am — the ones who outlasted the night
-Slide 4: The room at late-night close-up: glasses, faces, warmth
+Slide 1: 3am — the bar at full late-night speed
+Slide 2: 4am — the singers who waited all night to get on that mic
+Slide 3: 5am — the ones who outlasted everything
+Slide 4: Close: a glass, a face, the warm light at close
 Slide 5: "STARDUST CHICAGO · TILL 5AM · 710 N CLARK"',
-'#stardustchicago #latenightchicago #karaokechicago #chicagonightlife #riverNorth #till5am',
-'5-slide late-night carousel. The 3am-5am crowd. The ones who don''t leave. The room at its most honest.',
+'#stardustchicago #latenightchicago #karaokechicago #chicagonightlife #riverNorth #till5am #saturdaynightchicago',
+'5-slide late-night carousel. Shoot past midnight — 3am, 4am, up to close. The crowd that stayed. The room at its most honest. Not the polished early-evening look — the real thing.',
 '', '2026-07-14', '11:00');
 
 -- ── POST 243 · TikTok Video · Jul 16 · Thursday late-night pull ──────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'thursday at stardust chicago. the room that keeps you out later than you planned. 710 n clark.',
+'you go to stardust for one drink. you stay for three hours. this is a known thing.',
 '',
-'The late-night pull — starting early, ending late. The room that makes you miss your reasonable exit.',
-'Script: "you go to stardust for one drink. you stay for three hours."
+'The late-night pull — the story of how a Thursday becomes a 2am decision you don''t regret. Use a single person''s arc across the night: arriving, watching, singing, staying.',
+'Script: "you go to stardust for one drink. that''s not how this ends."
 
-0:00 · 2s — Someone checking their phone: 8:30pm — they just arrived
-0:02 · 2s — Same person: drink in hand, watching the first singer
-0:04 · 2s — 10pm: they''re singing themselves — something happened
-0:06 · 2s — 11pm: they''ve ordered another round, made three friends
-0:08 · 2s — Midnight: they are not leaving, their phone says 22 texts unanswered
+0:00 · 2s — Someone checks the time on their phone: 8:47pm — just got here
+0:02 · 2s — Same person: drink in hand, watching the first singer, starting to smile
+0:04 · 2s — 10pm: they''re putting in a song request — something changed
+0:06 · 2s — 11pm: they''re at the mic — they have three new friends they didn''t arrive with
+0:08 · 2s — Midnight: another round, phone full of unread messages, not checking it
 0:10 · 2s — Wide room: everyone is this person
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY THURSDAY · 710 N CLARK
 Total: ~16s',
@@ -728,29 +728,29 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Story', 'draft',
-'Tonight. Stardust Chicago.
+'Tonight at Stardust Chicago.
 You''ll stay later than you planned.
 📍 710 N Clark · Doors 8pm',
 '',
-'Story (9:16). Late-night bar shot — warm, a little dark, the after-midnight energy. Bold text overlay.',
+'Story (9:16). Late-night bar shot — warm, a little dark, the room past midnight. Bold text overlay. The image should make someone feel like they''re already missing something.',
 '', '2026-07-16', '16:00');
 
 -- ── POST 245 · Instagram Reel · Jul 17 · Friday late night reel ──────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'it''s 3am at stardust chicago and the room is still full. nobody planned to stay this long. everyone is glad they did.
+'3am at Stardust Chicago. The room is still full. Nobody planned to stay this long.
 
 710 N Clark · River North · Till 4am',
-'#latenightchicago #stardustchicago #karaokechicago #fridaynight #chicagonightlife #till4am',
-'Late-night reel — 3am energy at Stardust. The crowd that doesn''t leave. The room that earns the late hour.',
-'Script: "3am at stardust chicago. the room is full. nobody planned this."
+'#latenightchicago #stardustchicago #karaokechicago #fridaynight #chicagonightlife #till4am #riverNorth',
+'Late-night reel — the 3am version of the room. Shoot the difference from earlier in the night: thinner crowd, but more committed. The people who are still here chose to be here.',
+'Script: "3am at stardust. still going. nobody planned this part."
 
-0:00 · 2s — Clock: 3:00am on a phone — the late night is real
-0:02 · 2s — Wide room: still packed, somehow even more alive
-0:04 · 2s — Late-night singer: nobody is judging anything at 3am
-0:06 · 2s — Crowd reaction: the 3am crowd gives more than any other
-0:08 · 2s — Bar: the late pour, the bartender who has seen everything tonight
+0:00 · 2s — Phone screen in the crowd: 3:02am — this is happening
+0:02 · 2s — Wide room: still packed, the late-night crowd denser than it looks
+0:04 · 2s — Late singer: nothing to prove at 3am, just the song
+0:06 · 2s — Crowd reaction: the 3am crowd gives more generously than any other
+0:08 · 2s — Bar: the late pour, the bartender who has seen the whole arc of the night
 0:10 · 2s — Wide — the room at 3am, the ones who stayed
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY FRIDAY · TILL 4AM
 Total: ~16s',
@@ -760,17 +760,17 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'friday night at stardust chicago. the people who stayed till 4am last week are already back. 710 n clark.',
+'the people who stayed till 4am last friday are already back tonight. stardust chicago.',
 '',
-'The return — the people who experienced the late night once and came back for more. The room that creates regulars.',
+'The return — people who experienced the late night once and came back for it on purpose. Shoot the regulars who arrive knowing exactly how this ends. The room that makes you come back.',
 'Script: "they came back. because 4am at stardust is worth coming back for."
 
-0:00 · 2s — Regular walking in — they''ve done this before and you can tell
-0:02 · 2s — They find their spot immediately — they know where it is
-0:04 · 2s — Late night: the crowd thinning to the ones who mean it
-0:06 · 2s — 2am: the room at its most honest — nobody here by accident
-0:08 · 2s — The late-night singer: no crowd to impress, just the song
-0:10 · 2s — Wide late-night room: the ones who stayed, the ones who came back
+0:00 · 2s — Regular walking in — no scan of the room, straight to their spot
+0:02 · 2s — They settle: drink ordered before they''re fully seated — they know
+0:04 · 2s — The crowd thinning around midnight to the people who mean it
+0:06 · 2s — 2am: the room at its most honest — nobody here by mistake
+0:08 · 2s — Late-night singer: no one to impress, just them and the song
+0:10 · 2s — Wide late-night room: the ones who came back, the ones who stayed
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY FRIDAY · TILL 4AM
 Total: ~16s',
 '2026-07-17', '10:00');
@@ -779,7 +779,7 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'stardust chicago is open tonight till 4am. the room at its best after midnight.',
+'stardust is open tonight. friday. till 4am. the room after midnight is worth the cab.',
 '', '', '', '2026-07-17', '08:00');
 
 -- ── POST 248 · Instagram Story · Jul 18 · Saturday tonight ───────────────────
@@ -787,27 +787,27 @@ INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, medi
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Story', 'draft',
 'Saturday at Stardust Chicago.
-Open till 5am. Come late. Stay later.
+Open till 5am. The later the better.
 📍 710 N Clark',
 '',
-'Story (9:16). Late-night Saturday crowd. Bold text overlay. The room after midnight.',
+'Story (9:16). Late-night Saturday crowd — the room after midnight, warm and dense. Bold text overlay.',
 '', '2026-07-18', '16:00');
 
 -- ── POST 249 · TikTok Video · Jul 18 · Saturday 5am ─────────────────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'TikTok', 'Video', 'draft',
-'it was 5am at stardust chicago and nobody wanted to leave. 710 n clark. every saturday.',
+'it was 5am at stardust and the last singer was still going. nobody moved.',
 '',
-'The 5am crowd — the ones who outlasted the night. The room at last call. The very end of the night that still felt like it could keep going.',
-'Script: "5am at stardust chicago. last call. nobody moved."
+'The 5am crowd. Shoot last call: the room thinner, but the people left are the ones who decided this mattered. The last song of the night at Stardust is never a throwaway. Capture that.',
+'Script: "5am at stardust chicago. last song. the room listened."
 
-0:00 · 2s — Clock detail: 4:50am — the night is almost done
-0:02 · 2s — The room: thinner now, but the ones left are exactly who should be here
-0:04 · 2s — Last singer of the night: no crowd pressure, just the song and the room
-0:06 · 2s — The crowd for the last song: every face fully in, no irony
-0:08 · 2s — Bar: last call pour, the bartender who made it through
-0:10 · 2s — Wide: 5am at Stardust, the room at its most honest
+0:00 · 2s — Clock detail: 4:52am on someone''s phone — the end of the night is here
+0:02 · 2s — The room: down to the ones who chose to stay till the end
+0:04 · 2s — Last singer of the night: no crowd pressure, no performance of it — just the song
+0:06 · 2s — The room for the last song: every face fully in, no irony left at 5am
+0:08 · 2s — Bar: last call pour, the bartender who made it the whole way through
+0:10 · 2s — Wide: 5am at Stardust, the most honest version of the room
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~16s',
 '2026-07-18', '10:00');
@@ -816,19 +816,19 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Instagram', 'Reel', 'draft',
-'nobody leaves stardust chicago on a saturday because they want to. they leave because the lights come on.
+'Nobody leaves Stardust Chicago on a Saturday because they want to. They leave because the lights come on.
 
 710 N Clark · River North · Till 5am',
-'#saturdaynight #stardustchicago #till5am #karaokechicago #chicagonightlife #latenightchicago',
-'The late-night Saturday reel — 4am energy, the crowd that stayed, the room that earned every minute of the late hour.',
-'Script: "you don''t leave stardust on a saturday. you get asked to leave."
+'#saturdaynight #stardustchicago #till5am #karaokechicago #chicagonightlife #latenightchicago #riverNorth',
+'Late-night Saturday reel. Shoot 4am: the crowd that stayed, the last singers, the bar at close. The room at its most stripped-down and honest. The warmth doesn''t go away at 4am — it concentrates.',
+'Script: "you don''t leave stardust on a saturday night. you get asked to leave."
 
-0:00 · 2s — 4am: the room at late-night peak — thinner but more real
-0:02 · 2s — Late-night singer: they''ve been waiting all night to get on that mic
-0:04 · 2s — The crowd: every person left is fully invested, no half-measures
-0:06 · 2s — The bar at 4am: the ones who made it
-0:08 · 2s — Last song: the whole room for one last moment
-0:10 · 2s — Wide: 5am, lights up, the night that won''t end finally ending
+0:00 · 2s — 4am: the room thinner but more real — no one here by accident
+0:02 · 2s — Late singer: they waited all night for the mic, and you can hear it
+0:04 · 2s — The crowd at 4am: every person left is fully in, no half-measures
+0:06 · 2s — Bar at close: the ones who made it
+0:08 · 2s — Last song: the whole room for one more moment
+0:10 · 2s — Lights up: 5am, the night that wouldn''t end, ending
 0:12 · 4s — End card: STARDUST CHICAGO · EVERY SATURDAY · TILL 5AM
 Total: ~16s',
 '2026-07-18', '11:00');
@@ -837,21 +837,22 @@ Total: ~16s',
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Facebook', 'Post', 'draft',
-'Another Saturday at Stardust Chicago open till 5am. Another room full of people who didn''t want the night to end.
+'Another Saturday at Stardust Chicago. The lights came on at 5am. A few people didn''t leave until they did.
 
-Three more nights next week — Thursday, Friday, Saturday.
-Doors 8pm · 710 N Clark, River North · Free to sing · No cover
+That''s the thing about this room — it doesn''t push you out early. You get exactly as much night as you want.
 
-Come for one drink. Stay till 5.',
+Back Thursday. Then Friday. Then Saturday again.
+
+Doors 8pm · 710 N Clark, River North · Free to sing · No cover',
 '',
-'Late-night Saturday recap photo — the room past midnight, the crowd that stayed.',
+'Late-night Saturday recap photo — the room past midnight, warm light, the crowd that earned the hour.',
 '', '2026-07-19', '13:00');
 
 -- ── POST 252 · Twitter/X Tweet · Jul 19 · Late-night week close ──────────────
 
 INSERT INTO posts (user_id, platform, post_type, status, content, hashtags, media_notes, video_script, date, post_time) VALUES
 (uid, 'Twitter/X', 'Tweet', 'draft',
-'stardust chicago last night: open till 5am, full room, nobody wanted to go. back thursday.',
+'stardust last night: till 5am, full room, last singer went at 4:45. back thursday.',
 '', '', '', '2026-07-19', '08:00');
 
 END $$;
