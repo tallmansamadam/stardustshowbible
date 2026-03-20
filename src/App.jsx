@@ -143,7 +143,7 @@ export default function App() {
         <div style={{ position: 'relative', textAlign: 'center', padding: '36px 0 28px' }}>
 
           {/* User info — top right */}
-          <div style={{ position: 'absolute', right: 0, top: 36, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ position: 'absolute', right: 0, top: 36, display: 'flex', alignItems: 'center', gap: 10, maxWidth: '45%' }}>
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: 11, color: colors.textFaint, fontFamily: fonts.mono, marginBottom: 2 }}>
                 {session.user.email.split('@')[0]}

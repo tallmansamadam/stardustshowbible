@@ -662,7 +662,7 @@ function PostForm({ initial, onSave, onCancel }) {
 
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 10, marginBottom: 14 }}>
+      <div className="grid-5" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 10, marginBottom: 14 }}>
         <div>
           <label style={labelSt}>Platform</label>
           <select value={form.platform} onChange={e => setPlatform(e.target.value)} style={inputSt}>

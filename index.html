@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+      body { overflow-x: hidden; }
 
       body {
         background-color: #090810;
@@ -143,6 +144,9 @@
       @media (max-width: 640px) {
         .grid-2, .grid-3, .grid-4 {
           grid-template-columns: 1fr !important;
+        }
+        .grid-5 {
+          grid-template-columns: 1fr 1fr !important;
         }
         .hide-mobile { display: none !important; }
         .show-mobile-only { display: flex !important; }
