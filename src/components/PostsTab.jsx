@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { colors, fonts } from './styles'
 
 // ── Platform config ────────────────────────────────────────────────────────────
@@ -633,6 +633,12 @@ function PostForm({ initial, onSave, onCancel }) {
     content: '', hashtags: '', media_notes: '', video_script: '', date: '', post_time: '',
   })
   const [saving, setSaving] = useState(false)
+
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onCancel() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [])
 
   const cfg = PLATFORMS[form.platform] || {}
   const charCount = form.content?.length || 0

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { colors, fonts } from './styles'
 
 const TAGS = ['general', 'karaoke', 'electro-swing', 'dj', 'marketing', 'sound', 'log', 'setlist', 'incident']
@@ -272,6 +272,12 @@ function NoteForm({ initial, onSave, onCancel }) {
     title: '', content: '', tag: 'general', date: new Date().toISOString().slice(0, 10), pinned: false,
   })
   const [saving, setSaving] = useState(false)
+
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onCancel() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [])
 
   const handle = async () => {
     if (!form.title.trim()) return

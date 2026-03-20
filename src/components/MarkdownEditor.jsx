@@ -12,6 +12,15 @@ export default function MarkdownEditor({ title, value, canEdit, onSave, saving }
     setEditing(false)
   }
 
+  const handleCancel = () => { setDraft(value); setEditing(false) }
+
+  useEffect(() => {
+    if (!editing) return
+    const handler = (e) => { if (e.key === 'Escape') handleCancel() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [editing, value])
+
   const renderInline = (text, key) => {
     const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/)
     return (
@@ -146,7 +155,7 @@ export default function MarkdownEditor({ title, value, canEdit, onSave, saving }
               {saving ? 'Saving…' : 'Save'}
             </button>
             <button
-              onClick={() => { setDraft(value); setEditing(false) }}
+              onClick={handleCancel}
               style={{
                 background: 'none', border: '1px solid rgba(255,255,255,0.1)',
                 color: 'rgba(155,143,212,0.8)', borderRadius: 8,
