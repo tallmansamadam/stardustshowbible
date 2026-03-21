@@ -27,9 +27,9 @@ const CHECKLIST = {
     label: 'Night Arc',
     color: '#d4a84a',
     items: [
-      '8:00pm — Doors. Minimal static lighting. Seed queue running.',
-      '9:30pm — Introduce light movement on moving bars.',
-      '11:00pm — Full tilt: moving bars, star lights, full color.',
+      '6:00pm — Doors. Happy hour begins. Minimal static lighting. Seed queue running.',
+      '8:00pm — Happy hour ends. Introduce light movement on moving bars.',
+      '10:00pm — Full tilt: moving bars, star lights, full color.',
     ],
   },
   postshow: {

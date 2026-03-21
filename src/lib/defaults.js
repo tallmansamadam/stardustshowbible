@@ -91,7 +91,14 @@ Warm · Theatrical · A little cheeky · Never corporate · Never cringe
 - [ ] See if Karafun supports a custom branded idle/background screen — design one at 1080×1920px and test upload
 - [ ] Confirm Karafun display output is routed to odd-numbered screens only
 
-### Every Karaoke Night
+### Happy Hour
+- **Every day, 5–8pm**
+- Drinks specials run from 5pm — karaoke nights (Fri/Sat) the mic opens at 6pm, so happy hour and the early queue overlap for two hours
+- Keep lighting minimal and warm during happy hour — it's a transition, not a party yet
+- Happy hour is a natural onboarding moment: guests arrive relaxed, lower stakes, perfect time for first-timers to grab the mic before the room fills
+
+### Every Karaoke Night (Fri & Sat)
+- Doors open at **6pm** — karaoke queue opens immediately
 - QR cards on every table and at the bar (Karafun room code + scan instructions)
 - 4 wireless mics checked and charged before doors open
 - Host briefed on the arc: warm → peak → emotional close
@@ -273,12 +280,12 @@ Short overlaid text reads instantly on a phone screen and keeps the visual doing
 
 **Good:**
 - "STARDUST CHICAGO"
-- "Every Thursday."
-- "Tonight. 8pm."
+- "Every Friday & Saturday."
+- "Tonight. 6pm."
 - "The mic's live."
 
 **Bad:**
-- "Karaoke every Thursday Friday and Saturday at Stardust Chicago"
+- "Karaoke every Friday and Saturday at Stardust Chicago"
 - "Come sing your favorite songs at 710 N Clark"
 
 Multi-line on-screen text is fine — stack short lines rather than writing one long line. Each line stays at 3 words max.
@@ -321,7 +328,13 @@ Steps 1–4 happen at the **clip level**. Steps 5–6 happen at the **timeline l
 **Templates**
 
 *Event announcement (Reel cover caption):*
-Friday. The booth. Your song. Doors at 8.
+Friday. The booth. Your song. Doors at 6.
+📍 710 N Clark · River North
+[hashtags]
+
+*Happy hour:*
+Happy hour every day. 5–8pm.
+Drinks. Good people. Sometimes a mic.
 📍 710 N Clark · River North
 [hashtags]
 
@@ -339,7 +352,7 @@ Every Friday. Every Saturday. 710 N Clark.
 Disco Karaoke is [FRIDAY/SATURDAY] night.
 Bring your best Donna Summer. Or your best Bee Gees. We don't judge.
 We just dance.
-📍 710 N Clark · River North · Doors 8pm
+📍 710 N Clark · River North · Doors 6pm
 [hashtags]
 
 *Electro Swing tease (pre-launch):*
@@ -397,17 +410,24 @@ Caption: "getting stardust ready for tonight"
 *Weekly event post:*
 Karaoke + DJ Night — This [Friday/Saturday] at Stardust Chicago
 
-Doors open at 8pm. Grab the mic or grab a drink — either way, you're going to have a night.
+Doors open at 6pm. Happy hour runs till 8. Grab the mic or grab a drink — either way, you're going to have a night.
 
 710 N Clark St · River North · Open till [4am/5am]
 RSVP → [link]
+
+*Happy hour post:*
+Happy hour at Stardust. Every day, 5–8pm.
+
+Come for the drinks. Stay for whatever happens next.
+
+710 N Clark · River North · @stardustchicago
 
 *Disco theme announcement:*
 We're making karaoke weird. In the best way.
 
 This [Friday/Saturday] is Disco & Funk Night at Stardust. Donna Summer. Earth Wind & Fire. The Bee Gees. Pick your banger, grab the mic, and do not hold back.
 
-710 N Clark · Doors 8pm · Free to sing
+710 N Clark · Doors 6pm · Free to sing
 
 *Electro Swing launch:*
 Something new is coming to River North.
@@ -621,9 +641,9 @@ Karafun does not support restricting song selection by genre or era for patrons 
 - Go noticeably bigger on disco/funk performances — this is the signal that trains the room
 
 ### Night Arc (Typical)
-- **Early (8–9:30pm)**: Lower stakes, seeded disco/funk queue sets the tone, warm the room
-- **Peak (9:30–11pm)**: High energy, move the queue fast, crowd should be fully in it by now
-- **Late (11pm+)**: Emotional bangers, duets, closing energy`,
+- **Happy Hour / Early (6–8pm)**: Doors open, happy hour running. Lower stakes, seeded disco/funk queue sets the tone. This is the warmup — first-timers, lighter energy, great time for people to grab the mic before the room is packed.
+- **Peak (8–10pm)**: Happy hour ends, energy shifts. Move the queue fast, crowd should be fully in it by now.
+- **Late (10pm+)**: Emotional bangers, duets, closing energy`,
 
   djsets: `## DJ Set Notes
 
@@ -683,6 +703,10 @@ Use the Notes tab (tag: setlist) to log each night's set after the show.
 Include: date, venue energy (1–5), peak moment, what cleared the floor, songs to repeat.`,
 
   planning: `## Event Planning
+
+### Weekly Schedule
+- **Every day**: Happy Hour 5–8pm
+- **Friday & Saturday**: Karaoke + DJ nights — doors 6pm, happy hour till 8pm, open till 4am (5am Sat)
 
 ### March 2026
 - Every Fri/Sat: Karaoke + DJ nights (ongoing)
@@ -934,18 +958,18 @@ The Mac Mini → BT receiver link is the weakest point in the entire signal chai
 
 The lighting follows the same arc as the music and hosting energy. Whoever is running lights should know the schedule and move with it — don't wait to be asked.
 
-**8:00–9:30pm — Minimal washes, no movement**
+**6:00–8:00pm — Minimal washes, no movement (Happy Hour)**
 - Static color washes only — warm ambers and soft purples
 - No moving fixtures, no strobing, no beam movement
-- Goal: intimate, bar-like atmosphere. People are still arriving and settling in.
+- Goal: intimate, welcoming atmosphere. Happy hour crowd is arriving and settling in.
 
-**9:30–11:00pm — Light movement**
-- Introduce slow, subtle movement on the moving bars
+**8:00–10:00pm — Light movement**
+- Happy hour ends — introduce slow, subtle movement on the moving bars
 - Color shifts can begin — deeper blues and golds coming in
 - Star lights can idle at low intensity
 - Still tasteful — movement should feel intentional, not frantic
 
-**11:00pm onward — Full tilt**
+**10:00pm onward — Full tilt**
 - Moving bars active, full travel and speed appropriate to the music
 - Star lights on — full scatter across the room
 - Strobing and beam effects permitted, read the room
