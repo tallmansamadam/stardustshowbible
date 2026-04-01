@@ -4,3 +4,14 @@ dist/
 .env
 *.local
 .DS_Store
+
+# Vim swap files
+*~
+*.un~
+
+# Local reference materials and sensitive files
+docs/
+Pay and Time Sheets/
+
+# Claude Code local state
+.claude/

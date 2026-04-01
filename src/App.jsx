@@ -10,8 +10,6 @@ import NightOf from './components/NightOf'
 import { colors, fonts } from './components/styles'
 
 const ROLE_MAP = {
-  // 'tallmancodes@gmail.com': 'editor',
-  // 'dino.brandom@gmail.com': 'manager',
   'ErikSturgeon13@gmail.com': 'viewer',
 }
 const DEFAULT_ROLE = 'editor'
