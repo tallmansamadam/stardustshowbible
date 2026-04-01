@@ -1026,9 +1026,9 @@ On duty: Friday & Saturday · 5pm – 1am
 Phone: [add]
 Email: [add]
 
-**Edlo** — Karaoke Host / DJ
+**Eddie Maldonado (Edlo)** — Karaoke Host / DJ
 On duty: [add schedule]
-Phone: [add]
+Phone: +1 (773) 988-8888
 Email: [add]
 
 ### Key People
