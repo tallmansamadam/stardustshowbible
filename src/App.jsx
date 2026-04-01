@@ -7,6 +7,7 @@ import NotesTab from './components/NotesTab'
 import PostsTab from './components/PostsTab'
 import MarkdownEditor from './components/MarkdownEditor'
 import NightOf from './components/NightOf'
+import CalendarTab from './components/CalendarTab'
 import { colors, fonts } from './components/styles'
 
 const SEED_ROLE_MAP = {
@@ -127,6 +128,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState(0)
   const [notes, setNotes] = useState([])
   const [posts, setPosts] = useState([])
+  const [events, setEvents] = useState([])
   const [content, setContent] = useState({})
   const [saving, setSaving] = useState(false)
   const [saveMsg, setSaveMsg] = useState('')
@@ -157,7 +159,7 @@ export default function App() {
 
   const loadAll = async () => {
     setLoading(true)
-    const [,, loadedMap] = await Promise.all([loadNotes(), loadPosts(), loadContent(), loadRoleMap()])
+    await Promise.all([loadNotes(), loadPosts(), loadContent(), loadRoleMap(), loadEvents()])
     setLoading(false)
   }
 
@@ -182,6 +184,25 @@ export default function App() {
     setRoleMap(newMap)
     if (session?.user?.email) resolveRole(session.user.email, newMap)
     flash('Users saved')
+  }
+
+  const loadEvents = async () => {
+    const { data } = await supabase.from('events').select('*').order('start_date', { ascending: true })
+    setEvents(data || [])
+  }
+  const addEvent = async (event) => {
+    const { data } = await supabase.from('events').insert([{ ...event, user_id: session.user.id }]).select()
+    if (data?.[0]) setEvents(e => [...e, data[0]].sort((a, b) => a.start_date.localeCompare(b.start_date)))
+    flash('Event saved')
+  }
+  const updateEvent = async (event) => {
+    await supabase.from('events').update({ ...event, updated_at: new Date().toISOString() }).eq('id', event.id)
+    setEvents(e => e.map(x => x.id === event.id ? event : x))
+    flash('Saved')
+  }
+  const deleteEvent = async (id) => {
+    await supabase.from('events').delete().eq('id', id)
+    setEvents(e => e.filter(x => x.id !== id))
   }
 
   const loadNotes = async () => {
@@ -444,6 +465,7 @@ export default function App() {
             {activeTab === 6 && <MarkdownEditor title="Event Planning" value={content.planning} canEdit={canEdit(role, 'planning')} saving={saving} onSave={v => saveContent('planning', v)} />}
             {activeTab === 7 && <MarkdownEditor title="Sound & Tech" value={content.sound} canEdit={canEdit(role, 'sound')} saving={saving} onSave={v => saveContent('sound', v)} />}
             {activeTab === 8 && <MarkdownEditor title="Contacts & Resources" value={content.contacts} canEdit={canEdit(role, 'contacts')} saving={saving} onSave={v => saveContent('contacts', v)} />}
+            {activeTab === 9 && <CalendarTab events={events} canEdit={canEdit(role, 'calendar')} onAdd={addEvent} onUpdate={updateEvent} onDelete={deleteEvent} />}
           </div>
         )}
       </div>

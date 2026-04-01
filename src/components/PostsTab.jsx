@@ -215,6 +215,35 @@ export default function PostsTab({ posts, canEdit, onAdd, onUpdate, onDelete }) 
         </div>
       </div>
 
+      {/* ── Stats bar ── */}
+      {(() => {
+        const counts = { idea: 0, draft: 0, scheduled: 0, posted: 0 }
+        ;(posts || []).forEach(p => { if (counts[p.status] !== undefined) counts[p.status]++ })
+        const statColors = { idea: 'rgba(240,232,208,0.3)', draft: '#d4a84a', scheduled: '#4ab8e0', posted: '#5acb8a' }
+        return (
+          <div style={{ display: 'flex', gap: 6, marginBottom: 20, flexWrap: 'wrap' }}>
+            {Object.entries(counts).map(([status, count]) => (
+              <div key={status} style={{
+                display: 'flex', alignItems: 'center', gap: 6,
+                background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 7, padding: '5px 11px',
+              }}>
+                <span style={{ fontSize: 14, fontWeight: 500, color: statColors[status], fontFamily: fonts.mono }}>{count}</span>
+                <span style={{ fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '1.5px', textTransform: 'uppercase' }}>{status}</span>
+              </div>
+            ))}
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: 6,
+              background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
+              borderRadius: 7, padding: '5px 11px', marginLeft: 'auto',
+            }}>
+              <span style={{ fontSize: 14, fontWeight: 500, color: colors.textMuted, fontFamily: fonts.mono }}>{(posts || []).length}</span>
+              <span style={{ fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, letterSpacing: '1.5px', textTransform: 'uppercase' }}>total</span>
+            </div>
+          </div>
+        )
+      })()}
+
       {/* ── Week strip ── */}
       <div style={{ marginBottom: 20 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>

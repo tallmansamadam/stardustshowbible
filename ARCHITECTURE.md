@@ -102,6 +102,20 @@ Three tables in Supabase. All use Row Level Security — authenticated users can
 | post_time | text | HH:MM (platform defaults applied by migration) |
 | created_at / updated_at | timestamptz | |
 
+### `events`
+| Column | Type | Notes |
+|--------|------|-------|
+| id | uuid PK | |
+| user_id | uuid | set on insert |
+| title | text | |
+| type | text | booking, private-event, dj-set, photo-shoot, maintenance, other |
+| start_date | text | YYYY-MM-DD |
+| end_date | text | YYYY-MM-DD (optional, defaults to start_date for single-day) |
+| notes | text | |
+| created_at / updated_at | timestamptz | |
+
+Run `supabase-events.sql` to create this table.
+
 ### `content`
 Key/value store for long-form docs and checklist state.
 

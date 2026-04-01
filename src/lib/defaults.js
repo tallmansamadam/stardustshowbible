@@ -1019,11 +1019,21 @@ The lighting follows the same arc as the music and hosting energy. Whoever is ru
 
   contacts: `## Contacts & Resources
 
+### Staff Schedule
+
+**Frank** — Karaoke Host / Sound
+On duty: Friday & Saturday · 5pm – 1am
+Phone: [add]
+Email: [add]
+
+**Edlo** — Karaoke Host / DJ
+On duty: [add schedule]
+Phone: [add]
+Email: [add]
+
 ### Key People
 - [ ] Venue owner / manager — add name + phone
 - [ ] Sound tech — add name + phone
-- [ ] DJ (resident) — add name + contact
-- [ ] Karaoke host — add name + phone
 - [ ] Photographer — add name + contact
 
 ### Equipment Support

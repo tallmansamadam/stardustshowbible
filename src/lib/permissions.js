@@ -10,8 +10,8 @@ export const ROLES = {
 
 // Which tabs each role can EDIT (all roles can VIEW everything)
 export const EDIT_PERMISSIONS = {
-  editor:  ['notes', 'posts', 'showbible', 'karaoke', 'djsets', 'planning', 'sound', 'nightof', 'contacts'],
-  manager: ['posts', 'showbible', 'planning', 'sound', 'nightof', 'contacts'],
+  editor:  ['notes', 'posts', 'showbible', 'karaoke', 'djsets', 'planning', 'sound', 'nightof', 'contacts', 'calendar'],
+  manager: ['posts', 'showbible', 'planning', 'sound', 'nightof', 'contacts', 'calendar'],
   viewer:  [],
 }
 
@@ -30,4 +30,5 @@ export const TABS = [
   { id: 'planning',  label: '📅 Planning',     section: 'planning'  },
   { id: 'sound',     label: '🔊 Sound & Tech', section: 'sound'     },
   { id: 'contacts',  label: '📞 Contacts',     section: 'contacts'  },
+  { id: 'calendar',  label: '✦ Calendar',     section: 'calendar'  },
 ]

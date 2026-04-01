@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { colors, fonts } from './styles'
 import { supabase } from '../lib/supabase'
 
-const CHECKLIST = {
+const getChecklist = (isSaturday) => ({
   preshow: {
     label: 'Pre-Show',
     color: '#9b8fd4',
@@ -30,6 +30,7 @@ const CHECKLIST = {
       '6:00pm — Doors. Happy hour begins. Minimal static lighting. Seed queue running.',
       '8:00pm — Happy hour ends. Introduce light movement on moving bars.',
       '10:00pm — Full tilt: moving bars, star lights, full color.',
+      isSaturday ? '5:00am — Last call. Begin close.' : '4:00am — Last call. Begin close.',
     ],
   },
   postshow: {
@@ -43,15 +44,15 @@ const CHECKLIST = {
       'Any equipment issues documented in Sound & Tech',
     ],
   },
-}
+})
 
 // Format a checked-state object into a readable markdown log
-const buildLogContent = (checkedState, dateLabel) => {
-  const totalItems = Object.values(CHECKLIST).reduce((a, s) => a + s.items.length, 0)
+const buildLogContent = (checkedState, dateLabel, checklist) => {
+  const totalItems = Object.values(checklist).reduce((a, s) => a + s.items.length, 0)
   const totalDone  = Object.values(checkedState).filter(Boolean).length
   const lines = [`## Night Of — ${dateLabel}`, '']
 
-  Object.entries(CHECKLIST).forEach(([sectionKey, section]) => {
+  Object.entries(checklist).forEach(([sectionKey, section]) => {
     const sectionDone = section.items.filter((_, i) => checkedState[`${sectionKey}-${i}`]).length
     lines.push(`### ${section.label} — ${sectionDone}/${section.items.length}`)
     section.items.forEach((item, i) => {
@@ -110,7 +111,7 @@ function PastNights({ notes }) {
   )
 }
 
-export default function NightOf({ onAdd, session, role, notes }) {
+export default function NightOf({ onAdd, session, role, notes: allNotes }) {
   // Roll over at 7am — before 7am counts as the previous night's show
   const _now = new Date()
   const showDateObj = new Date(_now)
@@ -122,6 +123,10 @@ export default function NightOf({ onAdd, session, role, notes }) {
   const prevDateObj = new Date(showDateObj)
   prevDateObj.setDate(prevDateObj.getDate() - 1)
   const prevShowDate = fmt(prevDateObj)
+
+  // Day-aware checklist: Saturday closes at 5am, Friday at 4am
+  const isSaturday = showDateObj.getDay() === 6
+  const CHECKLIST = getChecklist(isSaturday)
 
   const checklistKey = `checklist-${showDate}`
   const notesKey     = `nightof-notes-${showDate}`
@@ -204,7 +209,7 @@ export default function NightOf({ onAdd, session, role, notes }) {
         const dateLabel = prevDateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
         await onAdd({
           title: `Night Of Log — ${dateLabel}`,
-          content: buildLogContent(prevChecked, dateLabel),
+          content: buildLogContent(prevChecked, dateLabel, getChecklist(prevDateObj.getDay() === 6)),
           tag: 'log',
           date: prevShowDate,
           pinned: false,
@@ -243,7 +248,7 @@ export default function NightOf({ onAdd, session, role, notes }) {
       )
       await onAdd({
         title: `Night Of Log — ${dateLabel} (manual reset)`,
-        content: buildLogContent(checked, dateLabel),
+        content: buildLogContent(checked, dateLabel, CHECKLIST),
         tag: 'log',
         date: showDate,
         pinned: false,
@@ -444,7 +449,7 @@ export default function NightOf({ onAdd, session, role, notes }) {
         ))}
       </div>
 
-      <PastNights notes={notes} />
+      <PastNights notes={allNotes} />
     </div>
   )
 }
