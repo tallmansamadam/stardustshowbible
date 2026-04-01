@@ -9,10 +9,117 @@ import MarkdownEditor from './components/MarkdownEditor'
 import NightOf from './components/NightOf'
 import { colors, fonts } from './components/styles'
 
-const ROLE_MAP = {
+const SEED_ROLE_MAP = {
   'ErikSturgeon13@gmail.com': 'viewer',
 }
 const DEFAULT_ROLE = 'editor'
+
+const ROLES_AVAILABLE = ['editor', 'manager', 'viewer']
+
+function RolePanel({ roleMap, currentEmail, onSave, onClose }) {
+  const [entries, setEntries] = useState(
+    Object.entries(roleMap).map(([email, role]) => ({ email, role }))
+  )
+  const [newEmail, setNewEmail] = useState('')
+  const [newRole, setNewRole] = useState('viewer')
+  const [saving, setSaving] = useState(false)
+
+  const add = () => {
+    const email = newEmail.trim().toLowerCase()
+    if (!email) return
+    setEntries(e => {
+      const without = e.filter(x => x.email.toLowerCase() !== email)
+      return [...without, { email, role: newRole }]
+    })
+    setNewEmail('')
+    setNewRole('viewer')
+  }
+
+  const remove = (email) => setEntries(e => e.filter(x => x.email !== email))
+
+  const save = async () => {
+    setSaving(true)
+    const map = {}
+    entries.forEach(({ email, role }) => { map[email] = role })
+    await onSave(map)
+    setSaving(false)
+    onClose()
+  }
+
+  return (
+    <div style={{
+      position: 'absolute', top: '100%', right: 0, zIndex: 300,
+      width: 340, background: 'rgba(14,13,24,0.97)', border: '1px solid rgba(155,143,212,0.2)',
+      borderRadius: 12, padding: 20, backdropFilter: 'blur(24px)',
+      boxShadow: '0 12px 40px rgba(0,0,0,0.6)', textAlign: 'left',
+      animation: 'fadein 0.15s ease',
+    }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+        <span style={{ fontSize: 10, color: colors.purple, fontFamily: fonts.mono, letterSpacing: '2px', textTransform: 'uppercase' }}>
+          User Roles
+        </span>
+        <button onClick={onClose} style={{ background: 'none', border: 'none', color: colors.textFaint, fontSize: 16, padding: '0 2px', cursor: 'pointer' }}>×</button>
+      </div>
+
+      <div style={{ fontSize: 9, color: colors.textFaint, fontFamily: fonts.mono, marginBottom: 12, lineHeight: 1.6 }}>
+        Unrecognized emails default to editor. Add an entry to restrict access.
+      </div>
+
+      {entries.map(({ email, role }) => (
+        <div key={email} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+          <span style={{ flex: 1, fontSize: 11, color: email === currentEmail ? colors.gold : colors.textMuted, fontFamily: fonts.mono, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {email}
+          </span>
+          <select
+            value={role}
+            onChange={e => setEntries(ents => ents.map(x => x.email === email ? { ...x, role: e.target.value } : x))}
+            style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', color: colors.textMuted, borderRadius: 5, padding: '3px 6px', fontSize: 10, fontFamily: fonts.mono }}
+          >
+            {ROLES_AVAILABLE.map(r => <option key={r} value={r}>{r}</option>)}
+          </select>
+          <button
+            onClick={() => remove(email)}
+            style={{ background: 'none', border: 'none', color: 'rgba(224,96,96,0.5)', fontSize: 14, padding: '0 2px', cursor: 'pointer' }}
+          >
+            ×
+          </button>
+        </div>
+      ))}
+
+      <div style={{ display: 'flex', gap: 6, marginTop: 14, marginBottom: 14 }}>
+        <input
+          type="email"
+          placeholder="email@example.com"
+          value={newEmail}
+          onChange={e => setNewEmail(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && add()}
+          style={{ flex: 1, background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', color: colors.text, borderRadius: 6, padding: '6px 10px', fontSize: 11, fontFamily: fonts.mono }}
+        />
+        <select
+          value={newRole}
+          onChange={e => setNewRole(e.target.value)}
+          style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', color: colors.textMuted, borderRadius: 6, padding: '6px 8px', fontSize: 10, fontFamily: fonts.mono }}
+        >
+          {ROLES_AVAILABLE.map(r => <option key={r} value={r}>{r}</option>)}
+        </select>
+        <button
+          onClick={add}
+          style={{ background: 'rgba(155,143,212,0.1)', border: '1px solid rgba(155,143,212,0.25)', color: colors.purple, borderRadius: 6, padding: '6px 12px', fontSize: 10, fontFamily: fonts.mono }}
+        >
+          Add
+        </button>
+      </div>
+
+      <button
+        onClick={save}
+        disabled={saving}
+        style={{ width: '100%', background: 'rgba(155,143,212,0.12)', border: '1px solid rgba(155,143,212,0.3)', color: colors.purple, borderRadius: 8, padding: '9px', fontSize: 11, fontFamily: fonts.mono, letterSpacing: '1px' }}
+      >
+        {saving ? 'Saving…' : 'Save Changes'}
+      </button>
+    </div>
+  )
+}
 
 export default function App() {
   const [session, setSession] = useState(null)
@@ -25,6 +132,8 @@ export default function App() {
   const [saveMsg, setSaveMsg] = useState('')
   const [loading, setLoading] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [roleMap, setRoleMap] = useState(SEED_ROLE_MAP)
+  const [showRolePanel, setShowRolePanel] = useState(false)
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -39,14 +148,40 @@ export default function App() {
     return () => subscription.unsubscribe()
   }, [])
 
-  const resolveRole = (email) => setRole(ROLE_MAP[email] ?? ROLE_MAP[email?.toLowerCase()] ?? DEFAULT_ROLE)
+  const resolveRole = (email, map) => {
+    const m = map || roleMap
+    setRole(m[email] ?? m[email?.toLowerCase()] ?? DEFAULT_ROLE)
+  }
 
   useEffect(() => { if (session) loadAll() }, [session])
 
   const loadAll = async () => {
     setLoading(true)
-    await Promise.all([loadNotes(), loadPosts(), loadContent()])
+    const [,, loadedMap] = await Promise.all([loadNotes(), loadPosts(), loadContent(), loadRoleMap()])
     setLoading(false)
+  }
+
+  const loadRoleMap = async () => {
+    const { data } = await supabase.from('content').select('value').eq('key', 'role-map').maybeSingle()
+    if (data?.value) {
+      try {
+        const loaded = JSON.parse(data.value)
+        setRoleMap(loaded)
+        if (session?.user?.email) resolveRole(session.user.email, loaded)
+        return loaded
+      } catch {}
+    }
+    return null
+  }
+
+  const saveRoleMap = async (newMap) => {
+    await supabase.from('content').upsert(
+      { key: 'role-map', value: JSON.stringify(newMap), updated_at: new Date().toISOString() },
+      { onConflict: 'key' }
+    )
+    setRoleMap(newMap)
+    if (session?.user?.email) resolveRole(session.user.email, newMap)
+    flash('Users saved')
   }
 
   const loadNotes = async () => {
@@ -152,6 +287,20 @@ export default function App() {
                 {role}
               </div>
             </div>
+            {role === 'editor' && (
+              <button
+                onClick={() => setShowRolePanel(p => !p)}
+                style={{
+                  background: showRolePanel ? 'rgba(155,143,212,0.12)' : 'rgba(255,255,255,0.04)',
+                  border: `1px solid ${showRolePanel ? 'rgba(155,143,212,0.35)' : 'rgba(255,255,255,0.09)'}`,
+                  color: showRolePanel ? colors.purple : colors.textFaint,
+                  borderRadius: 6, padding: '5px 12px',
+                  fontSize: 10, fontFamily: fonts.mono, letterSpacing: '1px',
+                }}
+              >
+                Users
+              </button>
+            )}
             <button
               onClick={handleLogout}
               style={{
@@ -163,6 +312,11 @@ export default function App() {
               Sign out
             </button>
           </div>
+
+          {/* ── Role management panel (editor only) ── */}
+          {role === 'editor' && showRolePanel && (
+            <RolePanel roleMap={roleMap} currentEmail={session.user.email} onSave={saveRoleMap} onClose={() => setShowRolePanel(false)} />
+          )}
 
           {/* Logo */}
           <img
